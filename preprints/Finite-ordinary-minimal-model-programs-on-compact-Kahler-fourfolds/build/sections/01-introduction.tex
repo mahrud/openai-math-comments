@@ -1,25 +1,15 @@
 \section{Introduction}\label{sec:introduction}
 
-The minimal model program seeks a birational model whose canonical
-class, or more generally whose adjoint $K_X+\Delta$, is nef. When no
-such model is compatible with pseudo-effectivity, its expected outcome
-is a Mori fibre space: a fibration along which the adjoint is negative.
-Each birational step contracts an extremal ray or replaces a small
-contraction by its flip. Constructing the individual steps and choosing
-a sequence that reaches an endpoint are separate problems.
+A minimal model program replaces a pair by successive birational models
+on which its adjoint becomes more positive. For compact Kähler klt fourfold
+pairs with effective rational boundary in the global Weil $\Q$-factorial
+category, we prove that every maximal ordinary negative-ray program
+terminates, starting on the given pair without an initial modification.
+Its endpoint has nef adjoint when the initial adjoint is pseudo-effective;
+otherwise it carries a projective Mori fibre space. Auxiliary generalized
+pairs enter the proof, while every step of the resulting program is ordinary.
 
-For compact Kähler fourfolds, we prove that a suitable choice of ordinary
-negative steps gives a finite program. It starts on the given rational
-klt pair in the global Weil-divisor $\Q$-factorial category and reaches
-the endpoint dictated by pseudo-effectivity. The absence of a global
-ample polarization makes both the contractions and the finiteness
-argument analytic. A second issue is categorical: a divisor or reflexive
-sheaf defined on the entire compact space carries information different
-from a divisor germ on an arbitrary analytic neighbourhood. The proof
-keeps this distinction, and keeps the actual canonical rational line
-bundle, throughout the program.
-
-\subsection{Category and the finite-program theorem}
+\subsection{Category and main theorem}
 
 All varieties are reduced irreducible second-countable complex analytic
 spaces. A Kähler form on a normal space has smooth strictly
@@ -43,9 +33,6 @@ condition. Neither definition imposes $\Q$-factoriality on every analytic
 local ring. The distinction matters even for projective varieties; an
 example is given in Appendix~\ref{sec:local-convention}.
 
-A rational line bundle is an element of $\Pic(X)\otimes_{\Z}\Q$.
-An equality of rational line bundles means an isomorphism of holomorphic
-line bundles after a common positive integral multiple.
 We write $K_X$ additively for the canonical sheaf. When a canonical Weil
 divisor is given, we keep that representative and transport it through
 the program. We will also prove the intrinsic variant in which only the
@@ -94,11 +81,12 @@ step and strictly transformed in a flip. A \emph{Mori fibre space} has
 the same contraction properties and a base of strictly smaller
 dimension.
 
-\begin{theorem}[Finite ordinary programs]\label{thm:finite}
+\begin{theorem}[Termination of ordinary programs]\label{thm:finite}
 Let $X$ be a normal globally Weil $\Q$-factorial compact Kähler
 fourfold, with a canonical Weil divisor $K_X$, and let $\Delta\geq0$
-be a rational divisor such that $(X,\Delta)$ is klt. Then there is a
-finite sequence of ordinary negative steps
+be a rational divisor such that $(X,\Delta)$ is klt. Then every maximal
+ordinary negative-ray program starting on $(X,\Delta)$ terminates.
+Its birational steps form a finite sequence
 \[
  (X,\Delta)=(X_0,\Delta_0)\dashrightarrow\cdots
  \dashrightarrow(X_n,\Delta_n).
@@ -130,116 +118,74 @@ canonical rational line bundle in place of a chosen canonical Weil
 divisor. In either formulation the first model is exactly $X$.
 \end{theorem}
 
-Theorem~\ref{thm:finite} gives an affirmative solution of the
-finite-program form of the rational klt fourfold minimal model
-conjecture in this global compact Kähler category. The quantifier is
-existence of one finite ordinary program; its proof uses auxiliary
-models without replacing the first model $X$. In the pseudo-effective
-case, the endpoint assertion is nefness, with the discrepancy properties
-displayed above.
+The endpoint conclusion in the pseudo-effective case is nefness; no
+abundance assertion is made.
 
-\subsection{History and the additional argument}
+\subsection{Prior work and proof ingredients}
 
-The projective minimal model program supplies the geometric framework:
-negative extremal contractions, flips and the comparison of discrepancies.
-Kawamata--Matsuda--Matsuki developed the four-dimensional terminal
-termination argument using discrepancies and the loss of algebraic
-surface classes~\cite[Theorem~5-1-15 and
-Lemmas~5-1-16--5-1-17]{KMM1987}; Kollár--Mori give a systematic account
-of the birational tools~\cite{KM1998}. Fujino extended the
-fourfold termination method to canonical pairs with rational boundary
-\cite{Fujino2004,Fujino2005Addendum}. His addendum identifies a
-necessary correction to the low-discrepancy count: all valuations over
-certain smooth boundary surfaces must be treated together, rather than
-only the divisor obtained by the first blowup.
+Höring--Peternell established minimal models for non-uniruled compact
+Kähler threefolds~\cite{HP2016}. For fourfolds,
+Das--Hacon--Păun proved the compact klt result when the adjoint is
+$\Q$-linearly equivalent to an effective divisor~\cite{DHP2024}.
+Fujino's analytic relative MMP supplies ordinary cone, base-point-free,
+and flip theorems for projective morphisms~\cite{Fujino2022}.
+The generalized cone theorem of Hacon--Xie supplies the analytic
+negative rays and their finite form when the boundary plus nef part is
+big~\cite[Theorem~1.3]{HX2026}.
 
-In the compact Kähler setting, Höring--Peternell constructed minimal
-models for non-uniruled threefolds~\cite{HP2016}.
-Das--Hacon--Păun proved the fourfold minimal model theorem for dlt
-pairs whose adjoint is $\Q$-linearly equivalent to an effective divisor
-\cite[Theorem~1.1]{DHP2024}. Their work also develops analytic
-finite-generation and birational tools. Fujino's relative analytic
-MMP supplies ordinary cone, base-point-free and flip theorems for
-projective morphisms between complex analytic spaces~\cite{Fujino2022}.
-These are relative projective constructions; neither the source nor
-the final model is required to be projective over a point.
+For the supporting contractions needed here, Section~\ref{sec:contractions}
+proves a bounded-dimensional base-point-free statement. Its induction
+uses ordinary rational programs in dimensions at most three, all with
+global line-bundle polarizations. A divisorial negative-part comparison
+then supplies descent from a selected lower-dimensional good model.
+The ordinary rational adjoint detects each fourfold negative ray and
+gives a global algebra for its flip.
 
-Generalized pairs provide a way to carry a nef class on a higher model
-through the program. Das--Hacon--Yáñez developed their compact Kähler
-threefold theory and the analytic language used here~\cite{DHY2023}.
-Hacon--Xie's cone and transcendental base-point-free theorems supply
-contractions in the compact Kähler category
-\cite[Theorems~1.3--1.4]{HX2026}. Their generalized MMP with scaling
-terminates when the boundary plus nef part is big
-\cite[Theorem~1.5]{HX2026}; their Theorem~1.1 gives Mori fibre
-models in the non-pseudo-effective case and good models in its stated
-big cases. These results furnish the steps, the auxiliary programs,
-and the finiteness of marked models away from scaling parameter zero
-that we use below.
+The companion theorem on generalized log canonical flips
+\cite[Theorem~1.1]{OAI:Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026}
+proves termination for the resulting existing rational flip sequences.
+Compact analytic cycle classes bound the number of divisorial steps.
+The companion uses the independent low-place, relative-program,
+extraction, and special-termination results proved below; the supporting
+contraction argument does not use the finite-program theorem itself.
 
-Matsumura--Zhong prove termination with Kähler scaling for strongly
-$\Q$-factorial compact Kähler klt pairs whose pseudo-effective adjoint
-has numerical dimension zero. They also obtain minimal models after
-a small crepant strong $\Q$-factorial modification in that case
-\cite[Theorems~6.1 and~6.3]{MatsumuraZhong2026}.
+Two ingredients have uses beyond this deduction. First, actual line
+bundles that are numerically trivial over the relevant birational
+contractions descend without taking an additional power. Second,
+ordinary terminal fourfold flips terminate with effective \emph{real}
+boundary in our compact Kähler setting. The proof adapts the
+discrepancy and homology methods of Kawamata--Matsuda--Matsuki and
+Fujino, including the corrected treatment of low-discrepancy places
+\cite{KMM1987,Fujino2004,Fujino2005Addendum}.
 
-The remaining issue for Theorem~\ref{thm:finite} is the
-pseudo-effective adjoint without a bigness or effectivity assumption.
-We follow the limiting-model strategy of Birkar
-\cite[Theorem~1.2 and Section~4]{Birkar2009}. In that strategy,
-termination for a limiting terminal pair is combined with rational
-decomposition of a nef real adjoint and a sufficiently small
-perturbation. Birkar already works with real boundaries in the
-projective category. Here the required replacements concern compact
-Kähler models, potentially transcendental scaling data, and varying
-projective contraction bases.
-
-Three points make this transfer possible. First, the trace of the one
-initial Kähler form is identified as a positive current with local
-potentials on every relevant model. Second, we prove ordinary terminal
-fourfold termination with effective real boundary by combining the
-corrected low-discrepancy argument with compact analytic cycle classes.
-Third, actual line bundles numerically trivial over the relevant
-birational contractions descend without an additional tensor power.
-The latter fact preserves the Cartier indices of finitely many rational
-nef adjoints and therefore the positive intersection gap used in the
-perturbation argument. None of these auxiliary constructions changes
-the initial model of the ordinary program.
-
-\subsection{Proof strategy and organization}
+\subsection{Proof outline}
 
 Sections~\ref{sec:analytic}--\ref{sec:counts} establish the common
 analytic, birational and termination tools. The proof of
-Theorem~\ref{thm:finite} then has four stages.
+Theorem~\ref{thm:finite} then has three stages.
 \begin{enumerate}[label=\textup{\arabic*.}]
-\item Fix a Kähler form on the original space and run ordinary steps
-with its transformed generalized nef data as a scaling direction.
-If there were infinitely many steps, marked-model finiteness would
-force their scaling parameters to tend to zero.
-\item Extract the stabilized finite set of low-discrepancy places.
-On a fixed auxiliary model the boundaries decrease to an effective
-ordinary terminal boundary.
-\item Run a finite program for that limiting terminal pair and
-express its nef adjoint as a positive combination of rational nef
-adjoints. Their fixed Cartier indices give a uniform positive lower
-bound for nonzero degrees on curves.
-\item A sufficiently small generalized perturbation has a finite
-program on which all these rational adjoints are crepant. At its
-endpoint, descent to an earlier flip base makes the originally
-negative adjoint trivial on its contracted ray, a contradiction.
+\item The cone theorem gives a supporting nef class for each ordinary
+negative ray. Once its contraction is constructed, the ordinary
+rational adjoint provides one global relative polarization and one
+global flip algebra.
+\item A dimension induction proves the supporting contraction
+statement through dimension four. Its lower-dimensional ordinary
+programs are projective from their first step, and a negative-part
+comparison gives descent without lifting a generalized program from
+the lower-dimensional base.
+\item The companion flip-termination theorem excludes an infinite
+flip tail, while compact cycle counts bound the divisorial steps.
+Section~\ref{sec:endpoints} identifies the endpoint from
+pseudo-effectivity and gives the required discrepancy inequalities.
 \end{enumerate}
-Section~\ref{sec:endpoints} identifies the endpoint and concludes the
-finite-program proof. All extractions occur on auxiliary models;
-the ordinary sequence itself begins on $X$.
+All auxiliary constructions are separate from the ordinary sequence,
+which begins on $X$ itself.
 
-Section~\ref{sec:analytic} constructs the trace and comparison tools,
-and Section~\ref{sec:absolute} supplies ordinary steps and exact bundle
-descent. Section~\ref{sec:counts} proves the terminal theorem before
-it is used. Sections~\ref{sec:scaling} and~\ref{sec:perturbation}
-carry out the four stages above, and Section~\ref{sec:endpoints}
-identifies the endpoints. Appendix~\ref{sec:local-convention} gives
-a smooth projective example showing why analytic local
-$\Q$-factoriality cannot replace the global convention in the theorem.
-Figure~\ref{fig:dependencies} records the dependencies of this argument.
+The rational relative constructions in Section~\ref{sec:relative}
+feed threefold termination and the dimension induction for special
+termination. These results support both the contraction induction and
+the companion flip-termination theorem. Their nef data are actual rational
+line bundles on higher models, denoted by $\mathbf M$, distinct from the
+possibly transcendental nef classes used in the contraction argument.
 
 \input{figures/dependencies}

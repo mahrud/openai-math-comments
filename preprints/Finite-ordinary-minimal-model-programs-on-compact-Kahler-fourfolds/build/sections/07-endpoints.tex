@@ -1,6 +1,6 @@
 \section{The two endpoints}\label{sec:endpoints}
 
-The scaling program is finite by Proposition~\ref{prop:scaling-finite}.
+The ordinary program is finite by Theorem~\ref{repair:thm:reduction}.
 We now identify its endpoint from the pseudo-effectivity of the original
 adjoint.  Only ordinary birational comparisons are needed for this last step.
 
@@ -56,16 +56,17 @@ in its pole set has been used.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:finite}]
-Run the scaling construction on the given pair $(X,\Delta)$.
-Proposition~\ref{prop:ordinary-step} supplies each ordinary negative step,
-and Proposition~\ref{prop:scaling-finite} proves that the construction
-stops after finitely many such steps.  Write its endpoint as $(Y,\Gamma)$.
+Choose a maximal ordinary negative-ray program on the given pair
+$(X,\Delta)$. Proposition~\ref{prop:ordinary-step} supplies each step,
+and Theorem~\ref{repair:thm:reduction} proves that the program stops
+after finitely many such steps. Write its endpoint as $(Y,\Gamma)$.
 All intermediate varieties are normal compact Kähler fourfolds, all
 boundaries are the rational transforms of $\Delta$, and all pairs remain
 ordinary klt and globally Weil-divisor $\Q$-factorial with the stipulated
 canonical datum.  The optional strong global property is preserved by the
-same Proposition.  The auxiliary extractions used to prove finiteness do
-not change this program, which starts on $X$ itself.
+same Proposition. The auxiliary constructions in
+Section~\ref{sec:contractions} do not change this program, which starts
+on $X$ itself.
 
 The stopping rule gives either a nef adjoint $K_Y+\Gamma$ or a Mori
 contraction $g:Y\to S$.  In the latter case

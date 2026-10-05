@@ -89,17 +89,14 @@ is $(\ell-1)P$, so the \emph{same} index $\ell$ descends.
 A class is \emph{modified big} if it is the birational pushforward of a big class
 \cite[Definition~2.8]{HX2026}. In particular, a big class is modified big.
 
-We use the following consequences of the cone and transcendental
-base-point-free theorems \cite[Theorems~1.3 and~1.4]{HX2026}.  For a
-compact K\"ahler gklt pair with a descending nef part $\beta$, the cone
-$\NA(T)$ is the sum of its adjoint-nonnegative part and rays of rational
-curves.  Only finitely many rays are needed when the boundary plus
-$\beta$ is big.  If its adjoint class $\alpha$ is nef and the boundary
-plus $\beta$ is modified big, there is a Moishezon contraction
-$f:T\to Z$ to a normal compact K\"ahler space with $\alpha=f^*\gamma$
-for a K\"ahler class $\gamma$ on $Z$.  Neither assertion requires strong
-factoriality.  Projectivity in our weaker category will be proved from
-the ordinary rational adjoint.
+We use the generalized cone theorem
+\cite[Theorem~1.3]{HX2026}. For a compact K\"ahler gklt pair with a
+descending nef part $\beta$, the cone $\NA(T)$ is the sum of its
+adjoint-nonnegative part and rays of rational curves. Only finitely many
+rays are needed when the boundary plus $\beta$ is big. The supporting
+contractions needed in dimensions at most four are proved in
+Proposition~\ref{repair:prop:supporting-contraction}. Their projectivity
+will be obtained from the ordinary rational adjoint.
 
 \begin{lemma}[Supports with a K\"ahler margin]\label{lem:absolute-support}
 Let $(T,B)$ be an ordinary rational klt pair on a normal compact K\"ahler
@@ -168,13 +165,8 @@ compact K\"ahler if it has a global relatively ample line bundle.
 \end{lemma}
 
 \begin{proof}
-Clear the denominator of $L$ and choose any smooth Hermitian metric
-on that line bundle. The Bott--Chern identity says that the difference
-between its curvature and the indicated difference of forms is
-$\ddc$ of a global smooth function. Adjusting the metric by the
-exponential of that function gives the required curvature, with the
-same denominator restored at the end. Smooth functions and metrics
-here have their normal-space meaning in local embeddings.
+Clear the denominator of $L$.  Its Bott--Chern identity permits a smooth
+Hermitian metric whose curvature is the indicated difference of forms.
 On every fibre its curvature is positive.  Positivity of a line bundle
 on a compact complex space implies ampleness, and for a proper analytic
 map ampleness on every fibre is equivalent to relative ampleness
@@ -195,12 +187,12 @@ allows one multiple to work everywhere.
 
 We can now perform each step and preserve the category.  The next
 proposition records both the numerical ranks of the negative contraction
-and the actual canonical algebra of a flip.  This description identifies the transformed adjoint as an actual
-rational line bundle.
+and the actual canonical algebra of a flip.  The latter description will
+also be used in the conditional arbitrary-termination argument.
 
 \begin{proposition}[Ordinary negative steps]\label{prop:ordinary-step}
 Let $(T,B)$ be an ordinary rational klt pair on a normal compact K\"ahler
-space, globally $\Q$-factorial in the Weil-divisor sense, with canonical
+space of dimension at most four, globally $\Q$-factorial in the Weil-divisor sense, with canonical
 sheaf a rational line bundle.  Put $D=K_T+B$.  Every $D$-negative
 extremal ray $R\subset\NA(T)$ has a projective contraction $f:T\to Z$
 with connected fibres and normal compact K\"ahler target, such that
@@ -247,10 +239,8 @@ every place centred in either exceptional locus.
 
 \begin{proof}
 Choose $\alpha\in\mathcal U_R$ from Lemma~\ref{lem:absolute-support}
-and put $\kappa=\alpha-c_1(D)$.  Insert the descending nef part
-$\kappa$ into the ordinary pair.  It changes no discrepancy, while
-$B+\kappa$ is big.  Transcendental base-point-freeness gives
-$f:T\to Z$ and $\gamma$ K\"ahler with $\alpha=f^*\gamma$.
+and put $\kappa=\alpha-c_1(D)$. Proposition~\ref{repair:prop:supporting-contraction}
+gives $f:T\to Z$ and $\gamma$ K\"ahler with $\alpha=f^*\gamma$.
 Thus $c_1(-D)=\kappa-f^*\gamma$, and
 Lemma~\ref{lem:relative-positivity} proves projectivity and relative
 ampleness.  This establishes projectivity without strong factoriality.
@@ -401,9 +391,8 @@ actual divisor exceptional over $T'$.  This rule sends the class of a
 global Weil divisor to that of its transform or pushforward.  Moreover,
 it propagates the fixed-nef-part trace relation of
 Lemma~\ref{lem:class-trace}, with an actual effective exceptional
-correction on the new model.  The same conclusions hold for ordinary
-real-boundary flips on strongly globally $\Q$-factorial compact K\"ahler
-spaces constructed by \cite[Proposition~4.2]{HX2026}.
+correction on the new model.  The same conclusions hold for the ordinary
+real-boundary steps of Proposition~\ref{repair:prop:real}.
 \end{lemma}
 
 \begin{proof}
@@ -442,12 +431,12 @@ Its negative is $q$-nef because $p_0^*H$ is nef.  Negativity gives
 $J_{T'}\geq0$, and uniqueness and compatibility are those of
 Lemma~\ref{lem:class-trace}.
 
-For the stated real-boundary extension, the cited contraction theorem
-supplies the negative-side Bott--Chern rank and the ordinary real flip.
-The difference $p^*D-q^*D'$ is still an actual exceptional real
-discrepancy divisor, by Lemma~\ref{lem:negativity}.  The decomposition,
-transport formula, and correction argument above therefore apply
-unchanged.  Rationality of $D$ was not used in these arguments.
+For the stated real-boundary extension,
+Proposition~\ref{repair:prop:real} supplies the ordinary step and its
+negative-side Bott--Chern rank. The difference $p^*D-q^*D'$ is an actual
+exceptional real discrepancy divisor, as shown in
+Section~\ref{repair:sec:real}. The decomposition, transport formula,
+and correction argument above therefore apply unchanged.
 \end{proof}
 
 \begin{remark}\label{rem:ordinary-continuation}

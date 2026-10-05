@@ -24,9 +24,27 @@ Fundamental classes here use the complex orientation on the regular loci.
 Compact analytic spaces admit finite triangulations compatible with any
 specified finite collection of closed analytic subsets, with simplicial
 dimension at most twice the complex dimension.  Thus $c_k(V)$ is finite.
-We justify this topological input after Lemma~\ref{lem:cycle-loss}.
-For such a triangulation, Borel--Moore localization is the relative
-simplicial-chain sequence for a closed analytic subset and its complement.
+We recall the abstract-space reduction to make the topology used here
+explicit.  Teissier's compatible Whitney stratification
+\cite[Chapter~III, Propositions~1.5 and~2.2.2]{Teissier1982} has finitely
+many strata on a compact space.  Choose finitely many analytic charts
+$z_j:U_j\hookrightarrow\C^{N_j}$ and nonnegative smooth cutoffs
+$\rho_j$ compactly supported in these charts whose positivity sets
+cover the space.  Extend $\rho_j$ and $\rho_j z_j$ by zero.  The map
+\[
+ x\longmapsto\bigl(\rho_j(x),\rho_j(x)z_j(x)\bigr)_j
+\]
+is a topological embedding into a Euclidean space.  Near a point where
+$\rho_j>0$, its components extend smoothly to the ambient chart and the
+$j$-th block has the smooth left inverse $(t,w)\mapsto w/t$.
+It is therefore locally an ambient smooth embedding, which preserves
+the Whitney conditions.  Mather's control data
+\cite[Section~7, Proposition~7.1, and Section~8]{Mather1970} and
+Goresky's triangulation theorem \cite[Section~5]{Goresky1978} now give
+a compatible triangulation, smooth on each stratum.  Compactness makes
+it finite, and smoothness on strata gives the dimension bound.
+Borel--Moore localization below is then the relative simplicial-chain
+sequence for a closed analytic subset and its complement.
 
 If $V$ is K\"ahler and $S$ is such a subspace, then
 \begin{equation}\label{eq:positive-cycle}
@@ -95,38 +113,11 @@ so applying the result in both directions gives equality.
 This argument does not assert surjectivity on full homology, and does
 not compare the Bott--Chern spaces of the two models.
 
-\begin{proof}[Topological justification]
-We give the abstract-space reduction for the finite compatible
-triangulation used above.  Teissier's compatible Whitney stratification
-\cite[Chapter~III, Propositions~1.5 and~2.2.2]{Teissier1982} has finitely
-many strata on a compact space.  Choose finitely many analytic charts
-$z_j:U_j\hookrightarrow\C^{N_j}$ and nonnegative smooth cutoffs
-$\rho_j$ compactly supported in these charts whose positivity sets
-cover the space.  Extend $\rho_j$ and $\rho_j z_j$ by zero.  The map
-\[
- x\longmapsto\bigl(\rho_j(x),\rho_j(x)z_j(x)\bigr)_j
-\]
-is a topological embedding into a Euclidean space.  Near a point where
-$\rho_j>0$, its components extend smoothly to the ambient chart and the
-$j$-th block has the smooth left inverse $(t,w)\mapsto w/t$.
-It is therefore locally an ambient smooth embedding, which preserves
-the Whitney conditions.  Mather's control data
-\cite[Section~7, Proposition~7.1, and Section~8]{Mather1970} and
-Goresky's triangulation theorem \cite[Section~5]{Goresky1978} now give
-a compatible triangulation, smooth on each stratum.  Compactness makes
-it finite, and smoothness on strata gives the dimension bound.
-Borel--Moore localization is then the relative simplicial-chain
-sequence for a closed analytic subset and its complement.
-\end{proof}
-
 \subsection{Low places on compact log smooth data}
 
 We use generalized discrepancies in the sense of
 Section~\ref{sec:analytic}.  A place is called exceptional over $X$ when
 its center on $X$ has codimension at least two.
-The generalized klt statement below supplies the finite extraction set in
-Section~\ref{sec:scaling}.  Its coordinate estimate and finite centre-blowup
-argument also enter the terminal surface analysis in this section.
 
 \begin{lemma}[Low places and their projective realization]\label{lem:low-places}
 Let $(X,B+\bM)$ be a generalized pair on a compact normal complex
@@ -145,6 +136,9 @@ finitely many exceptional places with
 \[
  a(E;X,B+\bM)<2-b.
 \]
+\item If the pair is generalized lc and $U\subset X$ is its generalized
+klt locus, there is $\epsilon>0$ for which the assertion in \textup{(i)}
+holds for places whose centers meet $U$.
 \end{enumerate}
 In each assertion the finite set of exceptional places can be represented
 simultaneously by prime divisors on a smooth model projective over $X$.
@@ -275,6 +269,22 @@ Repeat the argument with $\delta=1-b$ and $T=2-b$ to prove
 \textup{(ii)}.  Subsequent stratum blowups preserve this lower bound
 by \eqref{eq:stratum-weight-sum}.
 
+For \textup{(iii)}, the weights on $W$ are nonnegative.  Set
+\[
+ \delta=\min\bigl(\{1\}\cup\{w_j:w_j>0\}\bigr)>0.
+\]
+The coefficient-one components have image in $X\setminus U$.
+Thus, at the general center on $W$ of a place whose center on $X$
+meets $U$, no zero-weight component occurs.  Work there over $U$.
+The same estimates and stratum blowups use only positive weights,
+so give the uniform lower bound and the strict cutoff $1+\delta$.
+The strata in question are restrictions of the finitely many global
+strata, and the blowups can be performed along their smooth closed
+closures on the compact model.  Meeting a zero-weight component
+elsewhere does not change a weight computed at the general point
+of the center.  This proves finiteness and projective realization
+also in this case.
+
 Finally, to represent the entire finite set at once, take the
 dominating component of the fiber product of the finitely many
 projective realizations over $W$, normalize, and resolve projectively.
@@ -297,9 +307,8 @@ which a place reaches that threshold to obtain a strict decrease.
 \subsection{Surface centres of low-discrepancy places}
 
 The terminal termination argument must allow many places of discrepancy
-below two above a moving boundary surface.  After recalling smoothness in
-codimension two, Lemma~\ref{lem:terminal-low-centres} identifies the infinite
-families that will be harmless.  Excluding only
+below two above a moving boundary surface.  The next lemma identifies
+exactly the infinite families that will be harmless.  Excluding only
 the first blowup above each surface would be incorrect; the correction
 in \cite[Proposition~3.1 and Lemma~3.2]{Fujino2005Addendum} is essential.
 
@@ -379,29 +388,16 @@ exceptional divisor.  There are finitely many such centres on the compact
 resolution.  We check that each supports only finitely many places with
 $a<2$.  It suffices to retain only the smooth component of coefficient
 $b$, since deleting the negative coefficients lowers discrepancies.
-Make this reduction once on the fixed resolution; on subsequent blowups
-retain all exceptional coefficients in the crepant boundary.
 Blow up the fixed centre at its general point.  Unless the given place
 has appeared, the same estimate forces its next centre to be the
 intersection of the positive strict transform and the new exceptional
-divisor.  Indeed, the strict transform of the positive divisor maps isomorphically
-to that divisor near the generic point of the original centre, because
-the centre is Cartier within it. A codimension-two centre over that
-generic point must therefore be this unique intersection. A proper
-subset has codimension at least three and discrepancy at least $3-b$;
-a centre outside the positive divisor has discrepancy at least two.
-Thus no other branch is possible. The process reaches the given place
-after finitely many blowups, by the decreasing positive integer
-empty-boundary discrepancy used in Lemma~\ref{lem:low-places}.
-For this reduced pair, the $k$th exceptional divisor on the branch has
-crepant coefficient $-k(1-b)$ and log discrepancy
+divisor.  This intersection is unique over the general point of the
+original centre.  The successive exceptional log discrepancies are
 \[
  1+k(1-b),\qquad k=1,2,\ldots.
 \]
-Indeed, the first coefficient is $b-1$, and blowing up the intersection
-of the newest exceptional divisor with the coefficient-$b$ strict
-transform changes $-k(1-b)$ to $b-k(1-b)-1=-(k+1)(1-b)$.
-Thus only
+At each further stage the negative coefficient of the newest exceptional
+divisor adds $k(1-b)$ to the lower bound $2-b$.  Hence only
 $k<1/(1-b)$ can occur before the cutoff two is reached.  This proves
 finiteness over every fixed exceptional centre.  These generic blowups
 are realized globally by blowing up the closures of the centres.
@@ -526,9 +522,7 @@ isomorphic open therefore gives an injection
  \mathcal C_2(B_i).
 \]
 These are assertions about surface spans; no surjectivity on the full
-fourth homology of the negative side is needed. Only compact analytic
-topology is used on the normalized components and their common image;
-the positivity needed next comes from the ambient Kähler fourfold.
+fourth homology of the negative side is needed.
 
 If a flipping surface lies in this boundary component, a surface above
 it on $D_i^\nu$ maps to a set of dimension at most one in $B_i$.

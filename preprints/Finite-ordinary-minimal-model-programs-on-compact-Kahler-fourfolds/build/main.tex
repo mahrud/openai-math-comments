@@ -1,19 +1,4 @@
 \documentclass[11pt,reqno]{amsart}
-\input{glyphtounicode.tex}
-\pdfgentounicode=1
-\pdfglyphtounicode{arrowhookleft}{21AA}
-\pdfglyphtounicode{mapsto}{007C}
-\pdfglyphtounicode{parenleftbig}{0028}
-\pdfglyphtounicode{parenrightbig}{0029}
-\pdfglyphtounicode{parenleftbigg}{0028}
-\pdfglyphtounicode{parenrightbigg}{0029}
-\pdfglyphtounicode{circleplusdisplay}{2295}
-\pdfglyphtounicode{summationtext}{2211}
-\pdfglyphtounicode{summationdisplay}{2211}
-\pdfglyphtounicode{integraldisplay}{222B}
-\pdfglyphtounicode{tildewide}{0303}
-\pdfglyphtounicode{axisshort}{002D}
-\pdfglyphtounicode{arrowaxisright}{2192}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[margin=1in]{geometry}
@@ -81,10 +66,10 @@
 \hypersetup{pdftitle={Finite ordinary minimal model programs on compact Kähler fourfolds},pdfauthor={OpenAI}}
 \title[Minimal model programs on Kähler fourfolds]{Finite ordinary minimal model programs\\on compact Kähler fourfolds}
 \author{OpenAI}
-\date{September 24, 2026}
+\date{October 5, 2026}
 \begin{document}
 \begin{abstract}
-We prove that a globally Weil-$\Q$-factorial compact Kähler klt fourfold pair with effective rational boundary and canonical rational line bundle admits a finite ordinary minimal model program starting on the given pair. It ends at a nef model when the adjoint class is pseudo-effective and at a Mori fibre space otherwise.
+We prove that every maximal ordinary negative-ray program starting from a compact Kähler klt fourfold pair with effective rational boundary in the global Weil-divisor $\Q$-factorial category terminates. It ends at a nef model when the adjoint is pseudo-effective and at a projective Mori fibre space otherwise.
 \end{abstract}
 \maketitle
 \tableofcontents
@@ -95,12 +80,14 @@ We prove that a globally Weil-$\Q$-factorial compact Kähler klt fourfold pair w
 \input{sections/05-scaling}
 \input{sections/06-perturbation}
 \input{sections/07-endpoints}
+\input{sections/08-resolutions}
+\input{sections/08-relative}
+\input{sections/09-threefold}
+\input{sections/10-special}
+\input{sections/11-threshold}
+\input{sections/12-supply}
 \appendix
 \input{sections/13-local-convention}
-\enlargethispage{2\baselineskip}
 \bibliographystyle{amsplain}
-\begingroup
-\renewcommand{\baselinestretch}{0.95}
 \bibliography{references}
-\endgroup
 \end{document}
