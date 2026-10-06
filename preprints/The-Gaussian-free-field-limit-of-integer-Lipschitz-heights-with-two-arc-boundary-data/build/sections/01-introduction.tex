@@ -98,13 +98,13 @@ interface assertion is a separate question.  The real-valued Lipschitz
 model in Schramm's Problem~2.3, p.~528, is also distinct from the integer model
 studied here.
 
-Glazman and Manolescu proved logarithmic fluctuations for the uniform
-integer Lipschitz model and developed a two-spin representation with
-positive association and scale estimates for loops \cite{GM2021}.  Those
-estimates are the probabilistic starting point of this paper.  Glazman and
-Lammers subsequently proved delocalisation across a larger parameter range
-and quantified it logarithmically.  Their 2025 article discusses the
-Gaussian free field limit as a conjecture \cite[Section~1.2.4]{GL2025}.
+Glazman and Manolescu developed a two-spin representation with positive
+association for the uniform integer Lipschitz model and studied its
+logarithmic fluctuations \cite{GM2021}.  Glazman and Lammers subsequently
+studied delocalisation across a larger parameter range.  Their 2025 article
+discusses the Gaussian free field limit as a conjecture
+\cite[Section~1.2.4]{GL2025}.  The scale estimates used here are proved in
+\cref{sec:cuts} from the annulus circuit estimate specified below.
 Logarithmic fluctuations alone do not determine a Gaussian scaling limit.
 The additional work here is to obtain comparisons under rare pinning,
 identify the covariance, control the imposed boundary values, and determine
@@ -155,12 +155,14 @@ plane state with a GFF scaling limit for each fixed $0<c\le2$
 This plane-state result does not identify the present two-arc
 triangular-lattice law or its normalization.
 
-A companion article proves the GFF limit for weighted integer Lipschitz
-heights with zero boundary, for each fixed edge weight
-$x\in[1/\sqrt2,1]$ \cite[Theorem~1.2]{OpenAIWeighted2026}.
-Its weighted conditional laws and moment estimates are proved there.
-The present two-arc boundary theorem and normalization series are retained
-separately; neither field theorem is used as a premise for the other.
+For weighted integer Lipschitz heights with edge weight
+$x\in[1/\sqrt2,1]$, a companion article proves an annulus circuit estimate
+with one spin fixed on the boundary and the other free
+\cite[Theorem~2.3]{OpenAIWeighted2026}.
+We use this estimate only at $x=1$, with the first spin fixed to minus
+and an occupied-plus circuit in the interior as the event.
+\Cref{sec:cuts} derives the conditional cut and loop estimates needed here
+from this input.  The weighted field-convergence theorem is not used.
 
 \subsection{Proof strategy}
 

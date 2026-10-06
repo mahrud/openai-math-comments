@@ -24,8 +24,8 @@ radius is divided by $\delta$ in these lattice-unit definitions.
 \subsection{An amplification lemma for uniform arrays}
 
 The rounded midpoint inequality originates in
-Klartag--Lehec \cite[Theorem~1.4]{KlartagLehec2019}.  We use its
-nonnegative-function formulation in
+Klartag--Lehec \cite[Theorem~1.4]{KlartagLehec2019}.  We use the
+formulation for nonnegative functions in
 Gozlan--Roberto--Samson--Tetali \cite[Theorem~3]{GRST2019}.
 In one dimension it states that, if finitely supported nonnegative
 functions on $\Z$ satisfy
@@ -134,8 +134,10 @@ a connected constant-height skeleton.
 \end{lemma}
 
 \begin{proof}
-Choose $\eta>0$ small enough that $\rho(1+\eta)<1$, with slack for bounded
-lattice rounding at large distances.  Divide $[d,2d]$ into a bounded
+Let $\rho<1$ and $c_0>0$ be the constants in
+\cref{prop:loop-estimates}(ii).  Choose $\eta>0$ small enough that
+$\rho(1+\eta)<1$, with slack for bounded lattice rounding at large
+distances.  Divide $[d,2d]$ into a bounded
 number of intervals with ratio at most $1+\eta$.  Expose surrounding loops
 from the exterior, and consider the first one whose graph inradius
 lies in one such interval $[d', (1+\eta)d']$.  If it exists, its interior
@@ -146,7 +148,7 @@ surrounds $\Lambda_{\lfloor d'\rfloor}(x)$.  For sufficiently large $d'$,
  \lceil\rho n\rceil<\lfloor d'\rfloor,
 \]
 because $\rho(1+\eta)<1$.  Thus two such loops imply the exact event
-in the imported upper estimate, in the same graph convention.  Their
+in \cref{prop:loop-estimates}(ii), in the same graph convention.  Their
 conditional probability is at most $1-c_0$.
 Reapply this argument after each successive pair of exposed loops.
 The count in the interval is dominated by one plus twice a geometric
@@ -155,10 +157,9 @@ such bounds handles $[d,2d]$.
 
 At bounded distances, disjoint loops approaching that close must use
 distinct vertices in a fixed finite ball, so their number is bounded
-deterministically.  This handles the rounding exceptions.  No imported
-upper bound was applied to the original polygon or skeleton face; every
-application followed exposure of a surrounding loop.  The flat loop
-description in \cref{lem:gray} therefore suffices for the stated domains.
+deterministically.  This handles the rounding exceptions.  Every application
+of the upper bound follows exposure of a surrounding loop, so the flat
+loop description in \cref{lem:gray} suffices for the stated domains.
 
 Finally, triangular graph distance and Euclidean distance are comparable
 by fixed constants, and a contour is within bounded distance of its
