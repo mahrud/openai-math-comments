@@ -774,7 +774,7 @@ having a connected passage of diameter at least $b$ in a fixed box
 has an exponential tail. Its constants depend on $b$ and the fixed
 box geometry, not on the roughness of the surrounding walls or on
 the number of chambers in the realization with a common fill.
-\item For one chamber, let a rectangle and its joining buffer lie
+\item For one chamber, let a lattice-aligned rectangle and its joining buffer lie
 wholly in the unprescribed accessible interior. Use the relative dual
 restriction with separate side ports defined in the proof. The number of distinct
 components of the restricted $N$ graph crossing between two specified
@@ -854,8 +854,8 @@ by that history. Meshes above the small threshold used by the collar
 lemma are absorbed by the deterministic number of vertices in the
 fixed box.
 
-For item~2 we adapt the crossing exploration underlying
-\cite[Section~19.1, especially Lemmas~19.1 and~19.4]{DKLM2026}.
+For item~2 we use a crossing exploration followed by a finite-domain
+boundary comparison.
 First fix the relative planar dual of the given restricted $N$
 lattice quadrilateral. Its medial boundary follows the four sides
 of the rectangle. In the auxiliary $W$ graph, truncate a dual edge
@@ -896,85 +896,93 @@ from below. A proposed connection between lower pieces through the
 region above $\gamma$ would first join $\gamma$ as well. This is
 the stopping-line property for the enumeration.
 
-After selecting $\gamma$, reveal the whole below envelope, with
-endpoint spins before edge states. Calling the $W$ parity even,
-extend endpoint half-edges only for the following geometric closure,
-and close the envelope to an even domain $D_\gamma$ through the
-unused side and bottom buffer outside the
-central test balls. All earlier queried regions and their possibly
-unfavorable frontiers are now inside $D_\gamma$; its boundary
-segments in the central balls are exactly matching segments of
-$\gamma$. The endpoint extensions are not edges of the counted
-matched graph. The transcript is a cylinder measurable in $D_\gamma$.
-Equivalently, one can disintegrate over that full cylinder after
-the selection. The envelopes are nested as the search moves upward,
-so the next transcript still has this form.
+After selecting $\gamma$, reveal its whole closed below envelope,
+with endpoint spins before edge states. Reflect the colors if necessary
+so that $\gamma$ is plus. We use test rectangles with sides parallel to
+the coordinate axes of the $W$ lattice; the primal and dual square
+lattices have the same axes. Complete only the two endpoint half-edges
+of $\gamma$ to their actual $W$ edges. Their states are already known:
+each half-edge inherited the state of that actual edge, and its being
+open forces the additional endpoint to have the same spin. Thus this
+operation assumes no unexamined connection. The actual endpoints of all
+left-exiting half-edges lie on one $W$-lattice column, and the analogous
+statement holds on the right. Let $B$ have these two columns as its
+lateral boundary and extend its top and bottom a fixed distance into
+the unprescribed joining buffer. The completed $\gamma$ is a proper
+crosscut of $B$: its only vertices on the lateral boundary are its two
+endpoints, because the matched graph contains no exterior side-column
+edges. Write $U_\gamma$ for the component above this crosscut and
+$F_\gamma$ for the closed region below it. All the earlier crossing-search
+transcripts in $B$ are below $\gamma$.
 
-In a central vertical strip with a buffer continuing above the
-rectangle, use the partial-circuit construction of
-\cite[Lemma~19.4 and the proof of Lemma~19.1]{DKLM2026}. That lemma
-is stated for the plane: it allows arbitrary same-parity data in
-revealed even domains whose in-ball frontier is matching, and tests
-a circuit in the matching graph augmented by those domains.
-To transfer its bound to a finite conditional kernel, choose a
-complete deterministic outer circuit $\Gamma_{\rm out}$ of the $W$
-lattice, with its incident edge layer inside the unused buffer and
-outside the test ball. Let $G^\circ$ be the graph induced by the $W$
-vertices strictly inside $\Gamma_{\rm out}$, and let $V_\partial$ be
-its vertices adjacent to that circuit. Analytically disintegrate the
-old conditional law over the spins at $V_\partial$ and a complete
-exterior and interface realization, fixing all endpoint spins before
-edge states. For each fixed contact-spin vector, the positive exterior
-fibers give laws on $G^\circ$ with identical retained interior pins
-and local edge factors; only the same-color
-partition of $V_\partial$ induced from outside varies. The interface
-factors are constants once these endpoint spins are fixed. Every
-exterior connection reaches $G^\circ$ through $V_\partial$. This
-includes inherited abstract wires, whose terminals are outside the
-unprescribed buffer.
+Analytically disintegrate the conditional law over the entire
+configuration outside $U_\gamma$, including the unused parts of the
+buffer, and over its boundary contact spins before interface edge
+states. This extra disintegration is used only for the estimate; it is
+not added to the next search transcript. On every positive exterior
+fiber the finite weight on $U_\gamma$ is the weight of
+\cref{prop:comparison}, with the exterior same-color connections
+retained. All contacts on $\gamma$ are plus and belong to a single
+class, since $\gamma$ itself is open. The other contacts lie on the
+upper boundary arc of $B$.
 
-For a sought plus circuit, replace this exterior partition by one
-class on all minus contacts and singleton exterior classes on plus
-contacts, retaining every interior pin and wire. This is the adverse
-ordered boundary condition of \cref{prop:comparison}: it preserves or
-merges every old minus connection and removes only plus exterior
-connections. Realize it by pinning the vertices of $\Gamma_{\rm out}$
-minus and its edges open. Pin each inward incidence $vc$, with
-$v\in V_\partial$ and $c\in\Gamma_{\rm out}$, open minus if $s_v=-$
-and closed if $s_v=+$; pin any interior chord of $\Gamma_{\rm out}$
-open minus as well. These are compatible states after the endpoint
-spins are fixed. An old minus-open incidence remains open, an old
-plus-open incidence is closed, and an old closed incidence is either
-kept closed or opened minus. The comparison is between kernels on
-the common graph $G^\circ$; it does not impose the old exterior pins
-on this new realization. Reflect colors for a sought minus circuit.
+Replace this fiber's boundary condition by the following adverse one.
+Keep $\gamma$, including its endpoints, plus and open. Make all other
+contacts on the upper boundary arc minus and wire them together; retain
+only the one plus class supplied by $\gamma$. The two boundary edges
+at a change of spin are closed. This is an ordered decrease for the
+plus order: it retains every required lower plus connection, removes
+only additional plus connections, and merges all remaining minus
+connections. Changes of contact spins and their compatible incident
+edge states use the same order. Therefore the original fiber dominates
+this fixed adverse law on $U_\gamma$, by \cref{prop:comparison}.
+In particular, no event belonging to the original history has been
+removed from a conditional probability.
 
-Under the complete cut $\Gamma_{\rm out}$, the finite interior
-$(s,W)$ law and the plane law conditioned on the same cut have the
-same flat kernel. Condition both on the identical retained interior
-pins, contact spins, inward incidence states, and interior chords.
-Cover the full added interface layer by finitely many small even
-domains whose closures remain outside the test ball. Together with
-$D_\gamma$, they make this conditioning measurable in the auxiliary
-domain union, while adding no in-ball frontier segment or augmented
-edge in the tested annulus. Lemma~19.4 applies in this plane
-representation, with exactly the matching in-ball frontier of
-$\gamma$, and gives the uniform positive partial-circuit bound.
-The ordered comparison holds for every old fiber, so averaging with
-its original probability introduces no factor. The original wired law
-uses the same $(s,W)$ comparison before the cut. Multiple frontier
-segments are handled by the finite-family conclusion of Lemma~19.4;
-the polar Markov statement in Lemma~14.13 itself has only two arcs.
+Realize the adverse law on the full box $B$ by filling $F_\gamma$
+with plus spins and open $W$ edges, including the lower outer boundary
+arc, while keeping the upper outer boundary arc minus and wired as
+above. Every edge of the separating crosscut remains an actual open
+plus edge. The finite edge factors in \eqref{eq:spatial-edge-weight},
+or equivalently the component-count formula in
+\eqref{eq:spatial-euler}, show that this completion has exactly the
+adverse law as its $U_\gamma$ marginal: factors on the filled side
+cancel, the plus contacts form one class, and the other boundary
+contacts form the one minus class. There is no factor depending on
+the length or roughness of $\gamma$.
 
-Intersect a fixed chain of these tests under the conditional pin
-FKG law. With a fixed positive probability their augmented tube
-joins the filled lower part to above the rectangle. It stays in
-the central strip, where its last exit from $D_\gamma$ is on
-$\gamma$ itself. The remaining connection is actual and lies in
-the interior of the matched graph up to the top. A later parallel
-crossing of the same color would meet it and join $\gamma$ within
-that graph, while a crossing of the opposite color cannot cross it.
-Thus the tube event rules out another distinct $W$ crossing.
+The completed law is obtained from the law in $B$ with the worst
+constant minus wired boundary by increasing the lower boundary data
+and imposing compatible plus pins in $F_\gamma$.
+\Cref{prop:comparison} therefore makes it dominate that constant-boundary
+law for every increasing plus-circuit event. The ordinary buffered
+circuit estimate used in \cref{prop:circuits}, namely
+\cite[Theorem~16.4]{DKLM2026}, now gives a uniform positive lower
+bound for each circuit test in a fixed central strip of $B$.
+In transferring a circuit to $U_\gamma$, edges in $F_\gamma$ are
+artificial matching edges; all its other edges are actual plus edges.
+The estimate holds on every original exterior fiber, so averaging
+over those fibers preserves the same lower bound. This argument uses
+only the ordinary full-circuit estimate, not the arbitrary-history
+partial-circuit assertion of \cite[Lemma~19.4]{DKLM2026}.
+
+Choose a fixed chain of buffered circuit tests in this central strip,
+starting below the counted rectangle and ending above it. All test
+buffers stay away from the lateral sides of $B$, and their number
+depends only on the fixed aspect and buffer ratios. The usual tube
+gluing from \cref{prop:circuits}, followed by positive association in
+the completed law, gives a uniform positive probability $p$ that
+the augmented matching graph joins the filled lower part to above
+the rectangle. This tube event is increasing, so the same boundary
+comparison and fiberwise averaging give probability at least $p$
+under the original search history. Its last exit from $F_\gamma$
+is on $\gamma$ in the central strip. From there until its first exit
+through the top of the counted rectangle the connection is actual
+and lies in the matched graph. A later parallel crossing of the
+same color would meet this connection and hence join $\gamma$
+inside that graph, whereas a crossing of the opposite color cannot
+cross it. The tube therefore rules out another distinct $W$
+crossing.
 
 These tube tests are used to bound the conditional probability;
 their upper data are not added to the next search transcript.
