@@ -151,7 +151,16 @@ model: part~(4) pulls it up, and part~(5) removes the error
 
 The first substantial input is ordinary log abundance, in its
 divisorial form. We state the full line-bundle information needed
-in the proof.
+in the proof. The restricted model and contraction package of
+\cite[Theorem~3.55]{K} uses the base presentations of
+\cite[Proposition~3.30]{K} for the whole descended adjoint class.
+At its generalized klt (gklt) contraction and relative-model steps,
+these presentations give gklt base data with a globally nef carrier
+datum and modified-big
+total boundary. At the non-klt contraction step, the multiplier-ideal
+inclusion, projective descent, and restriction supply the required
+contraction on the full non-klt closed subspace. The ordinary adjoint
+induction then yields the following actual rational-line statement.
 
 \begin{theorem}[Ordinary divisorial decomposition]\label{pre:ordinary}
 Let \(X\) be a smooth compact K\"ahler manifold, and let \(B\) be a
@@ -174,10 +183,12 @@ is
 \]
 for a surjective morphism \(f:X\to Y\) with connected fibers between
 smooth connected projective varieties, a very general smooth fiber
-\(F\), reduced simple normal crossing boundaries \(D_X,D_Y\), and
-\(\Supp(f^*D_Y)\subseteq\Supp(D_X)\). Thus the boundary condition in
-the input is retained. We use Theorem~\ref{pre:ordinary} in every
-dimension. It implies ordinary nonvanishing: a sufficiently divisible
+\(F\), reduced simple normal crossing boundaries \(D_X,D_Y\),
+allowing zero, and \(\Supp(f^*D_Y)\subseteq\Supp(D_X)\).
+The conventions are \((-\infty)+b=-\infty\) and Iitaka dimension
+zero for a point. This is precisely \cite[Assumption~1.1]{K}, so
+\cite[Corollary~6.2]{LI} supplies the hypothesis in every finite
+dimension. We use Theorem~\ref{pre:ordinary} in every dimension. It implies ordinary nonvanishing: a sufficiently divisible
 multiple of \(J\) has a nonzero section. If \(a(X)=0\), its semiample
 part is rationally trivial, and hence \(\mu^*J\qsim R\).
 
