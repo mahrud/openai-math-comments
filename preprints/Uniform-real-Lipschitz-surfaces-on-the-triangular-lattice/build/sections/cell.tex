@@ -754,19 +754,18 @@ argument to every finite real linear combination of tests to obtain
 Gaussian finite-dimensional laws with covariance
 $(vA)^{-1}(-\Delta_D)^{-1}$.
 
-Here is the required distributional tightness. The anchored and
-equal-mass average bounds in \ref{f:averages} give bounded second moments
-for the coarse coefficients of a compactly supported wavelet expansion.
-A normalized two-dimensional wavelet at spatial scale $2^{-j}$ has
-coefficient equal to $O(2^{-j})$ times a smooth average difference.
-Thus its variance is $O(2^{-2j})$ while there are $O(2^{2j})$
-coefficients at that scale. Summation with weights $2^{-2sj}$ gives
-a uniform local $H^{-s}$ second moment for each $s>0$, down to the
-lattice scale. At finer scales the deterministic physical Lipschitz
-bound $O(n)$ for the interpolant gives total squared coefficients
-$O(n^2 2^{-2j})$, whose weighted tail is bounded as well. Compact
-Sobolev embedding into a slightly more negative order and a countable
-interior exhaustion give tightness as distributions.
+For distributional tightness, enclose the physical domains in a fixed
+flat torus and extend the centered affine field by zero. A Fourier
+coefficient has vertex weights obtained by integrating a bounded mode
+against the nodal hat functions. Uniformly over the mode, their absolute
+sum is bounded, their maximum is $O(n^{-2})$, and their support has
+lattice diameter $O(n)$. The original boundary supplies a connected
+pin set of diameter comparable to $n$. Proposition~\ref{f:averages},
+applied at scale $R=n$ to real and imaginary parts, therefore bounds
+all centered Fourier-coefficient second moments uniformly. Summing
+with Fourier weights gives a uniform $H^{-s}$ second moment for every
+$s>1$. Compact embedding into a more negative Sobolev space, followed
+by restriction to $D$, proves tightness as random distributions.
 
 Finally the Riemann pairing and affine pairing have vanishing difference.
 An interior nodal hat function has integral $(vn^2)^{-1}$ and, by the

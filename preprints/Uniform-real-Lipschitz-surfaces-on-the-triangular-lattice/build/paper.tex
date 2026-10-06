@@ -36,7 +36,7 @@
 \numberwithin{equation}{section}
 \title{Uniform real Lipschitz surfaces\\on the triangular lattice}
 \author{OpenAI}
-\date{September 25, 2026}
+\date{October 6, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -170,10 +170,11 @@ forward--reverse decomposition of Lyons and Zheng \cite{LyonsZheng}.
 The uniform changing-polytope force argument and weighted constant-drift
 identification are proved locally. At the curve stage, we adapt the
 harmonic-observable method of Schramm and Sheffield \cite{SSdiscrete}
-and use the two-orientation path criterion of Sheffield and Sun
-\cite{SSun}. The hard-constraint model must supply its own conditional
-covariance, height gap and stopping-time-uniform observable before
-those deterministic and diffusion arguments apply.
+and identify the whole curve using terminal side labels and
+harmonic-mass nonreturn. The hard-constraint model supplies its own
+conditional covariance, height gap and stopping-time-uniform observable.
+These inputs identify both endpoint drivers and their common limiting
+arc, and exclude macroscopic backtracking.
 
 \subsection{Plan of the proof}
 The proof has four parts. First, local volume curvature and sparse
@@ -197,7 +198,7 @@ strengthening: random observations are used only with their exact conditional
 Gibbs kernels, and the curve argument needs estimates uniform over the
 stopping rules used to test its driving function. In particular,
 conditional covariance, survival reweighting, and convergence of labelled
-harmonic accesses are established before the driving criterion is applied.
+harmonic accesses are established before the driving and whole-curve arguments.
 
 \section{Conventions for the Estimates}\label{sec:conventions}
 For local arguments rescale the lattice to spacing one and write $n$ for
@@ -268,8 +269,9 @@ In each finite collection of experiments the positive exterior heights
 have a positive lower bound, as required by the exterior barriers.
 
 The reference-first extraction in Section~\ref{sec:interface} then
-permits matching the exterior height to the extracted gap. Forward
-and reverse driving convergence and the strong-path criterion give
+permits matching the exterior height to the extracted gap.
+Proposition~\ref{h:uniform-path} combines the two driver limits with
+terminal-side identification and harmonic-mass nonreturn to prove
 the stated uniform curve limit. Proposition~\ref{h:normalization}
 identifies every extracted gap as $\sigma\sqrt{\pi/8}$;
 Corollary~\ref{h:assembly} removes the subsequences and places this
@@ -337,6 +339,11 @@ Section~1, theorem on p.~182.
 Communications in Mathematical Physics \textbf{274} (2007), 81--122.
 \url{https://doi.org/10.1007/s00220-007-0274-7}.
 \url{https://arxiv.org/abs/0706.3637v1}.
+\bibitem{RohdeSchramm} S. Rohde and O. Schramm,
+\emph{Basic properties of SLE},
+Annals of Mathematics \textbf{161} (2005), 883--924.
+\url{https://doi.org/10.4007/annals.2005.161.883}.
+\url{https://arxiv.org/abs/math/0106036}.
 \bibitem{Schramm} O. Schramm,
 \emph{Conformally invariant scaling limits (an overview and a collection
 of problems)}, International Congress of Mathematicians, Vol. I,
@@ -357,11 +364,6 @@ Probability Theory and Related Fields \textbf{157} (2013), 47--80.
 \bibitem{SheffieldSurfaces} S. Sheffield,
 \emph{Random surfaces}, Ast\'erisque \textbf{304} (2005), vi+175 pp.
 \url{https://numdam.org/item/AST_2005__304__R1_0/}.
-\bibitem{SSun} S. Sheffield and N. Sun,
-\emph{Strong path convergence from Loewner driving function convergence},
-Annals of Probability \textbf{40} (2012), 578--610.
-\url{https://doi.org/10.1214/10-AOP627}.
-\url{https://arxiv.org/abs/1003.4675v2}.
 \bibitem{Slominski} L. S\l omi\'nski,
 \emph{On existence, uniqueness and stability of solutions of multidimensional
 SDE's with reflecting boundary conditions}, Annales de l'Institut Henri

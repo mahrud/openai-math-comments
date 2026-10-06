@@ -35,11 +35,15 @@ distance from the original boundary. An independent walk from $v_n$
 samples the harmonic measure
 of the complete strand and the original boundary. A landing on the
 positive side is understood as an oriented access; two prime ends with the
-same Euclidean location need not have the same sign. We condition on that
-side and, when necessary, on the finitely many possible orientations of
-the incident lattice edge. All statements about boundary samples below are
-made under this harmonic sampling law. Lemma~\ref{g:extra} is needed to
-exclude additional excursions near the incident strand.
+same Euclidean location need not have the same sign. We retain this side
+as a label, but the two-reading comparison below does not condition on
+it. That comparison conditions only on the presence of a specified
+geometric incident edge and leaves the two landing signs averaged.
+Each realized profile $m_n$ is still the mean conditioned on its
+oriented complete strand. All boundary samples use this harmonic
+sampling law, with original-boundary landings kept separate.
+Lemma~\ref{g:extra} is needed to exclude additional excursions near
+the incident strand.
 
 For the global boundary-sampling statements, an experiment means a
 Dobrushin domain with sign-compatible exterior heights
@@ -66,15 +70,26 @@ and the independent full-walk exit comparison proved there; it does
 not use SLE or a matched height gap. Its stronger full-walk form
 also applies to landings on an arbitrary stopped prefix.
 
-When conditioning on a side or on an incident-edge label, first take
-a subsequence along which its probability converges. If the limit is
-zero, its entire contribution to a bounded harmonic test vanishes.
-Otherwise its probability is bounded below along that subsequence,
-so dividing \eqref{h:landing-exclusions} by that lower bound gives
-the same exclusion for the conditioned sampling law. There are only
-finitely many such labels at each stage. This is the only
-normalization needed to pass the exclusion to the boundary samples
-used below.
+Number the six sides of the dual hexagon at a primal vertex by
+$\sigma\in\{1,\ldots,6\}$, and put
+\[
+ E_{n,\sigma}
+ =\{\xi_n\hbox{ is a strand landing and }
+                 e_\sigma^*(\xi_n)\subset\gamma_n\}.
+\]
+These events cover the strand landings but need not partition them.
+For any finite collection of samples, first pass to a subsequence on
+which all their probabilities converge. A branch with zero limiting
+probability has vanishing contribution to every bounded harmonic test.
+Every other branch has probability bounded below; dividing the
+unnormalized exclusion error in \eqref{h:landing-exclusions} by this
+lower bound gives the same exclusion under its conditional law.
+Conditional on $E_{n,\sigma}$ and on $\xi_n=x$, translation by $-x$
+gives exactly the law conditioned on $Z^\sigma$ from
+Section~\ref{sec:geometry}. Thus the branch law is a mixture of these
+translated laws. We do not choose a unique incident edge, which could
+impose an additional inner event, and never condition on the landing
+sign in this comparison.
 
 \begin{lemma}[Harmonic sampling in the physical slit]\label{h:slit-sampling}
 Let the original Jordan lattice domains be contained in one fixed
@@ -235,16 +250,19 @@ configurations whose observer-to-strand distance is less than $\rho$
 in physical units. Lemma~\ref{g:observer-landing} makes this contribution
 vanish as $\rho\downarrow0$ after the mesh limit. On the retained
 configurations both lemmas apply with this fixed clearance. For a
-positive-probability side or orientation branch, divide the discarded
+nonvanishing geometric incident-edge branch, divide the discarded
 probability by its lower bound as above. This localization estimates
-reading errors under the original sampling law; the lower comparison
-in (G7) remains on all its admissible records.
+reading errors under the sampling law with the landing sign still
+averaged; the lower comparison in (G7) remains on all its admissible
+unoriented records.
 
 For a bounded harmonic limiting profile $m$ and an independent Brownian
 motion $W$ in its component, $m(W_t)$ has an almost sure limit as $W$
 approaches its exit. Denote that limit by $Y$. It is a random boundary
-value, not yet a deterministic height gap. The following elementary lemma
-specifies the comparison needed to make it deterministic.
+value, not yet a deterministic height gap. We first determine its
+absolute value $|Y|$ on strand landings, without conditioning on its
+side label. The following elementary lemma will be applied to these
+nonnegative absolute readings.
 
 \begin{lemma}[A common lower bound for two-scale readings]
 \label{h:common-kernel}
@@ -341,26 +359,35 @@ conclusion of the common-wall comparison, not an equality of the
 sampled wall heights.
 \end{proof}
 
-\begin{proposition}[The two readings required for the height gap]
+\begin{proposition}[The two absolute readings required for the height gap]
 \label{h:readings}
 Assume the harmonic-mean compactness and common-sign trace comparison of
 Proposition~\ref{b:cell}, Theorem~\ref{c:comparison}, and
 Theorem~\ref{t:trace}. Assume also the landing exclusions
 \eqref{h:landing-exclusions} and the sampled-configuration estimates
 of Proposition~\ref{g:sample-comparison} and Lemma~\ref{g:extra}.
-Then, along any joint subsequence of finitely many experiments, the
-following construction gives the hypotheses of
-Lemma~\ref{h:common-kernel}.
-The limiting variables are the Brownian boundary samples of the
-conditional mean profiles.
+Then, along any joint subsequence of finitely many experiments, after
+extracting their geometric incident-edge branch probabilities as above,
+the following construction gives the hypotheses of
+Lemma~\ref{h:common-kernel} simultaneously for all nonvanishing branches.
+Its readings take values in $[0,M]$, and their limiting variables are
+the absolute values $|Y|$ of the Brownian strand-boundary samples of the
+conditional mean profiles. No landing-side sign is conditioned upon.
 \end{proposition}
 \begin{proof}
-Fix the positive-probability side and orientation branches described
-above. We construct an inner reading $V_n$ from the incident strand
-and an outer reading $U_n$ from the external arms. Both approximate
-the same boundary sample. The comparison of sampled configurations
-will then bound the conditional law of $V_n$ below by one common
-reference law, independently of the external record.
+Regard each nonvanishing event $E_{n,\sigma}$ as one member of the
+finite collection; independence between these members is not needed.
+If none remain, the assertion about strand samples is vacuous.
+Work under each branch's conditional law, disintegrated over the landing
+location and translated as above. We use the resulting $Z^\sigma$
+notation, always with the landing sign still averaged. The actual
+orientation remains part of each signed conditional mean.
+We construct auxiliary signed inner and outer readings
+$\widetilde V_n,\widetilde U_n$ which approximate the same signed
+boundary sample. Their absolute values will be the readings $V_n,U_n$.
+The inner absolute reading, unlike its signed auxiliary version, will
+be a function of the unoriented record and so will admit the common
+lower comparison from (G7).
 
 For a target error, first use \eqref{h:landing-exclusions} to discard
 strand landings within distance $\eta d_n$ of the original boundary
@@ -370,13 +397,14 @@ Recenter a retained landing at zero. Choose the lattice radii
  1\ll r_{\rm in}\ll R_{\rm core}\ll R_{\rm in}\ll R_{\rm mid}
        \ll R_{\rm conn}\ll r_{\rm out}\ll n.                 \tag{H1}
 \]
-Require also $r_{\rm out}<\eta d_n/20$. Thus the largest disks used by
-(G7)--(G8), including their factors $6$ and $4$, lie inside the original
-domain and exclude the observer. Clearance is measurable in the outer
+Require also $r_{\rm out}<\eta d_n/20$. Thus the disk
+$\mathfrak B_{12R_{\rm in}}$ used by (G7) and the disks
+$\mathfrak B_{4R_{\rm in}}$, $\mathfrak B_{4R_{\rm conn}}$ used by (G8)
+lie inside the original domain and exclude the observer. Clearance is measurable in the outer
 record, which includes the domain and observer; retaining it imposes no
 additional condition on the inner strand. Write
-$\mathcal A_n=\sigma(\Phi_{R_{\rm mid}})$ under the specified landing
-event $Z^\sigma$, and let $G_n\in\mathcal A_n$ be the retained
+$\mathcal A_n=\sigma(\Phi_{R_{\rm mid}})$ under this side-unconditioned
+$Z^\sigma$ mixture, and let $G_n\in\mathcal A_n$ be the retained
 clearance event. The diagonal choices below make $\Prob(G_n)\to1$.
 
 \emph{Agreement of complete-profile readings.}
@@ -408,17 +436,39 @@ of their readings is bounded uniformly by
 $\|\varphi\|_\infty a^{-2}\|m_n-m\|_{L^1(C_a)}$, which tends to zero.
 This transfers both readings to the lattice, including for kernels
 selected from the records.
-A diagonal choice of the radii in (H1) therefore makes the readings of
-the complete profile at $r_{\rm in}$ and $r_{\rm out}$ agree in $L^1$.
-The scales are chosen slowly; no convergence rate is asserted.
+Denote the signed complete-profile readings at $r_{\rm in}$ and
+$r_{\rm out}$ by $B_n^{\rm in}$ and $B_n^{\rm out}$, assigning zero
+when their kernel cutoff fails. Such failures have vanishing probability.
+A diagonal choice of the radii in (H1) makes both readings converge in
+$L^1$ to $Y$ on the joint subsequential realization, and in particular
+$\E|B_n^{\rm in}-B_n^{\rm out}|\to0$. These statements hold under the
+side-unconditioned branch law: the bounded errors under the original
+sampling law are divided only by the branch's positive probability
+lower bound. The scales are chosen slowly; no convergence rate is asserted.
 
 \emph{The reading determined by the inner record.}
-Retain the incident oriented strand and terminal walk piece in
-$\Theta_{R_{\rm in}}$. Define its canonical mean in the disk of radius
-$2R_{\rm in}$, with zero exterior heights and precisely those oriented
-strand observations. This conditioning is feasible by assigning
-sufficiently small signed heights. The construction is the same
-measurable function of the inner record in every experiment.
+Write $\theta=(\beta,w)$ for the unoriented record
+$\Theta_{R_{\rm in}}$. An admissible connected incident strand through
+$e_\sigma^*$ has exactly two lifts to adjacent sign observations:
+choosing the sign at the landing vertex $0$ propagates the signs along
+the nonbranching strand. Denote by $o_+(\theta)$ the lift for which $0$
+is positive, and by $o_-(\theta)$ its sign reversal. This deterministic
+choice of a lift only defines an auxiliary function of $\theta$; it
+does not condition the sampled field on that sign.
+
+For $o\in\{o_+,o_-\}$, let $m^{\rm can}_{\theta,o}$ be the conditional
+mean in the centered rounded disk of radius $2R_{\rm in}$, with zero
+exterior heights and precisely the strand signs in $o$. Choose the
+rounding equivariantly under the six lattice rotations. These polytopes
+have positive volume: assign small heights $+b$ and $-b$ to their
+respective string sites and zero to the other free sites, with
+$0<b<1/2$. All free edge inequalities and sign inequalities are then
+strict. The volume-preserving map $h\mapsto-h$ exchanges the two
+canonical polytopes and fixes the zero exterior data. Consequently
+\[
+ m^{\rm can}_{\theta,o_-}(z)=-m^{\rm can}_{\theta,o_+}(z)
+ \quad\text{at every }z.                                      \tag{H1a}
+\]
 
 Apply (G8) at $(R_{\rm core},R_{\rm in})$ and average its conditional
 bound. Except on an event of vanishing probability under $Z^\sigma$,
@@ -428,20 +478,50 @@ to the recorded terminal piece, and reversing that piece determines
 the sampling point. Any complete-chord piece in $B(0,R_{\rm core})$
 other than the incident strand $\beta_{R_{\rm in}}^\sigma$ would
 give two additional crossings of the same annulus. Outside the same
-type of exceptional event, the canonical and complete conditionings
-thus agree throughout $B(0,R_{\rm core})$.
+type of exceptional event, the canonical conditioning with the
+actual oriented lift and the complete conditioning thus agree
+throughout $B(0,R_{\rm core})$.
 
 Choose the inner radial kernel using the distance to the recorded
-strand and the cutoff just described. Its canonical mean reading,
-denoted $V_n$, is determined by $\Theta_{R_{\rm in}}$ alone.
-If this record does not contain the required approach point, or its
-kernel cutoff fails, set $V_n=0$. This is the same bounded function
-of the inner record in every experiment; it does not use $G_n$.
-Lemma~\ref{h:locality}, with
-$r_{\rm in}/R_{\rm core}\to0$, makes its difference from the
-complete-profile inner reading tend to zero. The extra-excursion
-estimate supplies both the common strand neighborhood and the
-presence of the chosen approach point in the recorded walk.
+geometric strand and the cutoff just described; denote it by
+$\kappa_\theta$. Both its center and its radius are functions only of
+$\theta$. For a valid approach point and cutoff put
+\[
+ v_{n,o}(\theta)
+   =\int\kappa_\theta(z)m^{\rm can}_{\theta,o}(z)\dd z,
+ \qquad
+ F_n(\theta)=|v_{n,o_+}(\theta)|.
+\]
+If the record has no admissible incident strand, does not contain the
+required approach point, or fails the kernel cutoff, set both
+$v_{n,o}$ and $F_n$ equal to zero. These fallback rules are geometric.
+Equation (H1a) gives $v_{n,o_-}=-v_{n,o_+}$, including the fallback
+cases. Thus
+\[
+ V_n:=F_n(\Theta_{R_{\rm in}})
+       =|\widetilde V_n|,
+ \qquad
+ \widetilde V_n:=v_{n,o_{\rm actual}}(\Theta_{R_{\rm in}}).
+                                                        \tag{H1b}
+\]
+The inner record space is countable, and the lift, kernel, and fallback
+choices are deterministic. Hence $V_n$ is one bounded measurable
+function of the unoriented record, the same in every experiment, and
+does not use $G_n$. The absolute value is taken after testing an oriented canonical
+mean; averaging the two orientations before taking the absolute value
+would instead give zero and is not the construction.
+
+Apply Lemma~\ref{h:locality} to each actual oriented conditioning,
+with $r_{\rm in}/R_{\rm core}\to0$. Its sequential uniformity allows
+these errors to be averaged over the actual orientations under
+$Z^\sigma$. The extra-excursion estimate supplies both the common
+strand neighborhood and the presence of the chosen approach point in
+the recorded walk. Boundedness absorbs its exceptional events and the
+cutoff failures, so
+\[
+ \E|B_n^{\rm in}-\widetilde V_n|\longrightarrow0.
+\]
+No landing sign has been conditioned on in this expectation.
 
 \emph{The reading determined by the outer record.}
 Retain the external arms and initial walk in $\Phi_{R_{\rm mid}}$.
@@ -465,8 +545,10 @@ Use a radial kernel smaller than one tenth of $r_{\rm out}$ and
 of the distance to the recorded external strands, with a positive
 lower cutoff as above. Its support stays outside the changed window.
 The mean under the modified conditioning, tested with this kernel,
-is $\mathcal A_n$-measurable; denote it by $U_n$. Set $U_n=0$
-when its required outer clearance or kernel cutoff fails.
+is $\mathcal A_n$-measurable, since that record includes the oriented
+external-arm observations; denote this signed reading by
+$\widetilde U_n$. Set $\widetilde U_n=0$ when its required outer
+clearance or kernel cutoff fails, and put $U_n=|\widetilde U_n|$.
 In the common exterior component, limiting mean differences are bounded
 harmonic functions with zero trace on the unchanged strands and original
 boundary. The only uncontrolled boundary is the deleted window, where
@@ -479,27 +561,79 @@ ball by
 \]
 The bounded enlargement by $C$ is negligible at these scales.
 Sequentially uniform compactness and trace comparison transfer the
-bound to the lattice with an error tending to zero. Combining the two
-localizations with complete-profile agreement gives
-$\E|U_n-V_n|\to0$.
+bound to the lattice with an error tending to zero. After including
+the bounded exceptional contributions, this gives
+$\E|\widetilde U_n-B_n^{\rm out}|\to0$.
+The inequality $\bigl||a|-|b|\bigr|\le |a-b|$ now gives
+\[
+ \E|U_n-V_n|
+ \le \E|\widetilde U_n-B_n^{\rm out}|
+     +\E|B_n^{\rm out}-B_n^{\rm in}|
+     +\E|B_n^{\rm in}-\widetilde V_n|
+ \longrightarrow0.                                      \tag{H1c}
+\]
+All three errors are integrated under the side-unconditioned branch
+law. In particular the absolute value is taken only after the signed
+locality and harmonic-mean arguments.
 
 \emph{One common lower kernel and the order of limits.}
-For each $n$, fix one admissible reference external record at radius
-$4R_{\rm in}$. Equation (G7) bounds every inner-record law below by
-$C^{-1}$ times this reference law, for every admissible external record
-at that radius in every experiment. Since
-$R_{\rm mid}>4R_{\rm in}$, the record at $R_{\rm mid}$ is a
-restriction of the record at $4R_{\rm in}$. Averaging the bound over
-the latter conditional on $\Phi_{R_{\rm mid}},Z^\sigma$ preserves
-$C^{-1}$. Push this one reference law through the canonical inner-mean
-function defining $V_n$ to obtain $\nu_n$. Lattice symmetries identify
-the finite list of landing orientations. The exceptional events used
-to make the readings agree do not restrict this lower comparison, and
-no factor is paid for unused annuli.
+Fix a geometric edge label $\sigma_0$. Write $F_{n,\sigma}$ for the
+function just constructed in branch $\sigma$, and let $T_\sigma$ be
+the lattice rotation fixing $0$ and carrying $e_\sigma^*$ to
+$e_{\sigma_0}^*$. The zero exterior canonical disk, the lift making
+$0$ positive, the radial kernel, and every fallback rule commute with
+this rotation. A spatial change of variables therefore gives
+\[
+ F_{n,\sigma}(\theta)
+       =F_{n,\sigma_0}(T_\sigma\theta).                  \tag{H1d}
+\]
+For each sufficiently large $n$, choose one admissible reference
+external record $\phi_n^*$ at radius $4R_{\rm in}$ with label
+$\sigma_0$ and positive hookup probability. Such a record can be
+taken from any nonvanishing branch after its outer clearance and a
+rotation: the clearance probability tends to one, and the discrete
+record space is countable. Let $\nu_n$ be the
+law on $[0,M]$ obtained by pushing
+\[
+ \operatorname{Law}_*(\Theta_{R_{\rm in}}\mid
+             \Phi_{4R_{\rm in}}=\phi_n^*,Z^{\sigma_0})
+\]
+through $F_{n,\sigma_0}$.
+
+For any fine external record $\phi$ in branch $\sigma$ with positive
+hookup probability and satisfying the disk hypotheses of (G7), rotate
+the experiment by $T_\sigma$ and apply the orientation-averaged (G7)
+to the event
+$\{F_{n,\sigma_0}(\Theta_{R_{\rm in}})\in B\}$. Equation (H1d) yields
+\[
+ \Prob(F_{n,\sigma}(\Theta_{R_{\rm in}})\in B
+       \mid\Phi_{4R_{\rm in}}=\phi,Z^\sigma)
+       \ge C^{-1}\nu_n(B)                                \tag{H1e}
+\]
+for every Borel set $B$. No landing-side sign is present in this
+conditioning. On $G_n$, the translated domain and observer meet the
+disk hypotheses of (G7) for every compatible fine record, because
+that clearance is already in the outer record.
+
+Since $R_{\rm mid}>4R_{\rm in}$, the record at $R_{\rm mid}$ is a
+restriction of the record at $4R_{\rm in}$. Disintegrate also over the
+original landing location in the branch mixture. Conditional
+integration of (H1e) over that location and the fine record, given
+$\mathcal A_n$, gives on $G_n$
+\[
+ \Prob(V_n\in B\mid\mathcal A_n)\ge C^{-1}\nu_n(B).
+\]
+The reference pushforward includes all geometric fallback records.
+Neither the extra-excursion events nor successful kernel cutoffs
+restrict this lower comparison. Edge-branch normalization was used
+only for the averaged errors, and no factor is paid here for labels
+or unused annuli.
 
 Here is the scale order for a finite collection of limiting Brownian
 boundary readings and a requested error less than $\eps>0$.
-Choose the clearance exclusion before any physical buffers. Choose the
+First extract the edge-branch probabilities; the finitely many
+nonvanishing branches then have a common positive probability lower
+bound. Choose the clearance exclusion before any physical buffers. Choose the
 outer physical approach scale for both the boundary-reading error and
 the retained clearance. Next choose $R_{\rm conn}/r_{\rm out}$
 for exterior locality and $R_{\rm mid}/R_{\rm conn}$ for its
@@ -511,7 +645,54 @@ every retained lattice scale diverges. Hold the scales and kernel
 cutoffs fixed while taking that limit, and then remove the cutoffs.
 Repeat for $\eps\downarrow0$ and take a diagonal subsequence.
 The comparison constant in (G7) is independent of all these unused buffers.
-Lemma~\ref{h:common-kernel} now applies.
+Lemma~\ref{h:common-kernel} now applies to $U_n,V_n$. Equation (H1c)
+and the convergence of the complete readings identify their common
+limiting variable with $|Y|$, not with a side-conditioned signed value.
+\end{proof}
+
+\begin{lemma}[The sign of a terminal conditional mean]\label{h:terminal-sign}
+For a complete crosscut in a sign-compatible Dobrushin experiment, the
+conditional mean at every positive-side primal vertex is nonnegative,
+and at every negative-side primal vertex it is nonpositive. Every
+limiting harmonic conditional mean has the same sign in its respective
+component. If $s\in\{+1,-1\}$ is the incident-side label of a Brownian
+strand-boundary sample $Y$, then $sY\ge0$.
+\end{lemma}
+\begin{proof}
+Freeze the full vector $A$ of strand-adjacent heights in the exact
+complete-strand kernel. On almost every positive-volume fiber the
+remaining conditional laws are the pinned Gibbs kernels of their free
+primal components, as in Section~\ref{f:section}. Every primal edge
+crossed by the dual crosscut has both endpoints among the frozen string
+vertices. Removing these vertices therefore disconnects the positive
+and negative free graphs. A pin incident to a positive free component
+is either a positive string pin or a pin on the positive original arc:
+an edge from a positive free vertex to a negative pin would cross the
+dual strand and would make that free vertex a frozen string vertex.
+At a mark the two endpoints of the marked boundary edge are fixed, and
+the crossed edge in its incident triangle has frozen string endpoints.
+The exterior is fixed as well, so there is no free route around either
+end of the crosscut. This also verifies the asserted incidence at the
+marks.
+
+All pins incident to a positive free component are consequently
+nonnegative. Compare its conditional Gibbs kernel with the kernel on
+the same component having all these pins set to zero. The monotone
+single-site heat-bath coupling used in Lemma~\ref{f:bounded} orders the
+two kernels, and the zero-pinned kernel has mean zero by $h\mapsto-h$.
+Thus $\E[h(x)\mid\gamma_n,A]\ge0$ at each positive free vertex.
+Integrating over $A$ preserves this inequality; it already holds at
+positive string vertices by their observed sign. Reflection gives the
+negative inequality.
+
+These assertions are literal at primal vertices. Affine triangles
+mixing the two sides lie within $O(n^{-1})$ of the dual slit. Every
+compact subset of a limiting component avoids them for large $n$, so
+the compact-interior convergence of the means preserves the sign
+throughout that harmonic component. Its Brownian martingale and its
+boundary limit preserve the same weak inequality. Lemmas
+\ref{h:slit-sampling} and~\ref{h:marked-limits} identify that component
+sign with the incident-side label of the sampled access.
 \end{proof}
 
 \begin{proposition}[Subsequential universal height gap]\label{h:height-gap}
@@ -526,23 +707,107 @@ positive strand side and $-l$ on a negative strand side.
 \end{proposition}
 \begin{proof}
 Include a fixed reference Dobrushin experiment with original boundary
-heights $\pm1/2$. The barrier estimate gives nonzero harmonic mass to
-its path sides. Compactness supplies joint mean profiles and harmonic
-samples. Proposition~\ref{h:readings} and
-Lemma~\ref{h:common-kernel} make the sampled positive boundary value a
-single deterministic constant, shared by all included experiments.
-The reference experiment's positive lower trace bound gives $l>0$,
-and its complete-crosscut comparison gives $l\le1/2$.
-Sign reflection identifies the negative value as $-l$.
+heights $\pm1/2$ and a fixed interior observer. Choose compact subarcs
+$J_+\Subset A_+$ and $J_-\Subset A_-$ of positive length. Let
+$p_n^\pm$ be the probabilities that the independent full walk, stopped
+only on the original boundary, exits on their lattice approximations.
+Full-domain walk convergence gives
+$p_n^\pm\to\omega_D(v,J_\pm)>0$. Conditional on any completed chord,
+an observer not already adjacent to it lies in one of its two
+components. A full walk exiting on the opposite $J_\pm$ must cross the
+chord first. The absorbing-incidence fact in
+Lemma~\ref{h:slit-sampling} makes it visit a strand-adjacent vertex
+before that exit. Since $J_\pm$ avoid the marks, this forced crossing
+cannot be the marked boundary edge; if a crossed edge has a boundary
+endpoint, its interior endpoint is already absorbing before boundary
+priority can apply. An already adjacent observer has a strand landing
+at time zero. Hence, for some fixed $\delta>0$ and all large $n$,
+\[
+ \Prob(\xi_n\hbox{ is a strand landing}\mid\gamma_n)
+       \ge \min(p_n^+,p_n^-)\ge\delta.                  \tag{H1f}
+\]
+This is a deterministic separation argument for each chord and does
+not use a barrier estimate.
+
+Compactness supplies joint mean profiles and harmonic samples.
+Proposition~\ref{h:readings} and Lemma~\ref{h:common-kernel} make
+their absolute strand-boundary samples equal to one deterministic
+constant $l\ge0$ on every nonvanishing geometric edge branch, shared
+by all included experiments and labels. To pass back to all strand
+landings, for every error event $D_n$ use the finite-union bound
+\[
+ \Prob(D_n,\ \xi_n\hbox{ is a strand landing})
+       \le\sum_{\sigma=1}^6\Prob(D_n\cap E_{n,\sigma}).
+\]
+Zero-limit branches have vanishing unnormalized mass, and on every
+other branch the magnitude error tends to zero. The overlaps between
+the $E_{n,\sigma}$ cause no problem. Lemma~\ref{h:terminal-sign} now
+gives $Y=s|Y|=sl$ on a strand access with label $s$.
+
+For strict positivity, (H1f) and the finite cover give a reference
+edge branch with positive limiting probability. Choose the
+unnormalized landing-exclusion errors smaller than a fixed fraction
+of that probability, and then choose the conditional (G8) errors
+small. A positive limiting mass of accesses remains away from the
+original boundary and observer, with only the incident strand in the
+inner core and with the recorded walk approaching its accessed side.
+In particular the marks, which lie on the original boundary, and the
+ends of this local strand sector are outside the smaller testing scale.
+
+Here is the access condition for applying Lemma~\ref{g:sign-trace} on
+these reference sectors. In a positive completed component, freeze
+all strand-adjacent heights $A$ and take the positive portion in that
+lemma's Bernoulli coupling to be \emph{all} positive string pins
+incident to the component. For this mixed sector take
+$\lambda_*=1/2$ and $c_*=(d/2)\wedge1/2$ as in that lemma. Its pins
+$B_x\in\{0,2c_*\}$ satisfy $B_x\le A_x$, and every original-arc pin
+there is $+1/2\ge c_*$, the remaining comparison boundary value.
+All incident pins therefore satisfy the lower-tail inequality.
+By the free-graph separation in Lemma~\ref{h:terminal-sign}, the
+retained graph $G$ is a union of full common unqueried components:
+no free--free edge is deleted, all string walls have been frozen,
+and no negative pin is incident, including at the marks. Thus
+$P_{\rm u}=\varnothing$ in Lemma~\ref{g:screened-comparison}. With
+fixed vertices terminal as in (SC1), every test $x\in G$ satisfies
+$\delta_G(x,P_{\rm u})=\infty$, which exceeds every required
+fixed-multiple access margin. The negative case follows by reflection.
+This is a graph-access assertion, not a Euclidean separation from the
+nearby opposite string pins.
+
+At fixed kernel cutoff the support stays a positive fraction of the
+diverging testing scale from the dual strand, so it avoids the bounded
+lattice layer of frozen string vertices and lies in this unqueried
+component. The exclusions and (G8) give the isolated local access at
+diverging scales. Fix the oriented complete strand and the independent
+walk record defining the test before sampling the auxiliary pin
+transcript $(A,B)$. Given the strand, this walk record carries no
+additional height information. The square cover in
+Lemma~\ref{g:screened-comparison} can therefore be fixed before that
+transcript, as required. Apply the pure-side trace bound of
+Lemma~\ref{g:sign-trace} directly to the completed-component
+original/comparison pair just described, for each actual orientation.
+Its original marginal is the complete-strand kernel after averaging
+the frozen heights, so this bounds the complete-profile trace itself;
+the canonical open-strand pair is not used in this positivity step.
+The sequentially uniform bound may then be averaged over the two
+signs; it gives $sY\ge c_*>0$ on the retained positive-mass reference
+accesses. This pure-access trace bound is the strict positivity input.
+Since $|Y|=l$, it yields $l\ge c_*>0$.
+Finally Lemma~\ref{g:upper-half}, applied to the
+\emph{completed} reference profile together with
+Lemma~\ref{h:terminal-sign}, gives $|Y|\le1/2$ and hence $l\le1/2$.
+No upper bound for the canonical open-strand system is used.
 
 Apply this argument to a countable collection of interior balls, with
 a diagonal subsequence. If a terminal profile had a set of incorrect
-boundary values of positive harmonic measure from any ball in that
-collection, its sampled boundary value would have positive probability
-of differing from $l$. Thus the statement holds almost surely in
-every component seen from that exhaustion. Original boundary arcs retain
-their prescribed values by the boundary comparison, rather than by the
-height-gap argument.
+signed strand-boundary values of positive harmonic measure from any
+ball in that collection, its sampled value would have positive
+probability of differing from $sl$ on its label-$s$ access. The finite
+edge cover would detect that discrepancy on a nonvanishing branch,
+contrary to the preceding conclusion. Thus the statement holds almost
+surely in every component seen from that exhaustion. Original boundary
+arcs retain their prescribed values by the boundary comparison,
+rather than by the height-gap argument.
 \end{proof}
 
 \subsection{Passing to a stopped strand}
@@ -715,7 +980,7 @@ First obtain the deterministic $l$ on a subsequence using the reference
 experiment with exterior heights $\pm1/2$. Now add the experiment with
 exterior heights $\pm l$ and apply Proposition~\ref{h:height-gap} to
 these two experiments on that subsequence. Any further extracted
-height gap must still equal $l$, since the reference readings
+height gap must still equal $l$, since the reference absolute readings
 already converge to $l$. This yields the stopped observable for
 the matched experiment without assuming its existence before
 $l$ was fixed.
@@ -835,37 +1100,275 @@ tightness.
 
 \begin{proposition}[Uniform convergence of the whole curve]
 \label{h:uniform-path}
-If the hypotheses of Lemma~\ref{h:driving} hold for both exploration
-directions, the interfaces converge to chordal $\mathrm{SLE}_4$ in
-uniform Euclidean distance modulo increasing reparametrization.
+Consider the matched height-gap subsequence above, with exterior heights
+$\pm l$. Assume the stopped-observable conclusion of
+Proposition~\ref{h:stopped} in both directions, observer avoidance
+\textup{(GB4)}, harmonic-mass nonreturn \eqref{h:nr}, and the harmonic
+sampling conclusion of Lemma~\ref{h:slit-sampling}. Then the interfaces
+converge to chordal $\mathrm{SLE}_4$ in uniform Euclidean distance modulo
+increasing reparametrization.
 \end{proposition}
 \begin{proof}
-The dual interfaces are simple crosscuts and are continuously driven
-in each direction. Forward and reverse driving convergence follows
-from Lemma~\ref{h:driving}. Corollary 1.8 of \cite{SSun} applies to these
-two separate convergence-in-law statements for $\kappa\le4$; it does
-not require a previously constructed joint limit of the two drivers.
-Its conclusion is convergence of the entire curve, including its
-endpoints, in the uniform curve metric on the compactified reference
-domain.
+The argument uses more than convergence of the two endpoint drivers.
+The stopped observable identifies their limiting side labels in the same
+coupling. Harmonic-mass nonreturn then excludes macroscopic backtracking.
+All the estimates invoked here precede this proposition.
 
-Uniform convergence of the marked Jordan boundary parametrizations
-to the smooth limit boundary gives uniform convergence of the
-normalized inverse conformal maps on the closed reference disk
-by Rad\'o's theorem \cite[Section 1, p.~182]{Rado}.
-One way to see the boundary part is to use uniform local connectivity
-of these parametrized Jordan boundaries to turn small reference
-crosscuts into uniformly small physical crosscuts; interior convergence
-is the kernel theorem. Thus uniform curve convergence transfers to
-Euclidean distance in $D$. If the meaning of boundary convergence
-were weakened to kernel convergence alone, this last inference would
-need an additional hypothesis.
+\paragraph{Coupling the drivers and finite prefixes.}
+Let $\Phi_n:\mathbb H\to D_n$ take $0$ to the starting mark and $\infty$
+to the target. Normalize at a third converging boundary mark. Rad\'o's
+theorem \cite[Section 1, p.~182]{Rado}, applied first in disk coordinates,
+gives uniform convergence of these maps on the compactified closed
+half-plane to $\Phi:\mathbb H\to D$. The hypothesis here is uniform
+convergence of marked Jordan boundary parametrizations. It is stronger
+than kernel convergence alone. Use the corresponding normalization for
+the reverse exploration.
 
-In every traversed triangular face, the affine zero segment and the
-corresponding ordered dual strand stay within $C/n$ of each other.
-Their order agrees, so an increasing reparametrization gives the same
-$C/n$ bound for the complete curves. Hence the choice of polygonal
-representative does not alter the conclusion.
+Write $c_n(t)$ for the forward strand in physical coordinates at
+half-plane capacity $2t$, and $\widehat c_n(t)$ for its reversal with its
+own capacity clock. Both clocks range over $[0,\infty]$. Indeed the final
+half-edge approaches its mark non-tangentially through the polygon;
+reflection at that straight boundary edge makes its image approach
+infinity non-tangentially. A bounded-capacity hull has bounded height,
+so the capacity tends to infinity. Put, for $t>0$,
+\[
+ K_{n,t}=c_n([0,t]),\qquad F_{n,t}=c_n([t,\infty]),\qquad
+ L_{n,t}=\widehat c_n([0,t]).
+\]
+Fix a countable dense set $\mathcal Z\subset D$. Let $S_n(z)\in\{-1,1\}$
+record the side of the completed crosscut containing $z$, with $+1$
+for the side adjacent to the positive original arc. Assign either sign
+when the classification is undefined. These are component labels, not
+field signs at $z$.
+
+Lemma~\ref{h:driving} gives both marginal driver limits $2B$.
+Consequently their joint laws are tight. From every subsequence extract
+further and use a Skorokhod coupling on which the two drivers converge
+locally uniformly, $F_{n,t}\to F_t$ in Hausdorff distance for every
+positive rational $t$, and $S_n(z)\to S(z)$ for every $z\in\mathcal Z$.
+The extra records lie in countable products of compact spaces; the
+finite-mesh strands can be retained with their conditional laws.
+Denote the two limiting traces in physical coordinates by $c$ and
+$\widehat c$. Each is marginally chordal $\mathrm{SLE}_4$: it is simple,
+meets the boundary only at its endpoints, and is continuous up to the
+target \cite{RohdeSchramm}. No assertion about their joint law has yet
+been made.
+
+Almost surely, for every positive rational $t$,
+\begin{equation}\label{h:finite-prefixes}
+ K_{n,t}\longrightarrow K_t:=c([0,t]),\qquad
+ L_{n,t}\longrightarrow L_t:=\widehat c([0,t])
+ \quad\hbox{in Hausdorff distance}.
+\end{equation}
+Here is the required deterministic consequence of driving convergence.
+In half-plane coordinates, the limiting Loewner ODE is regular through
+time $t$ in a neighborhood of each point outside the simple limiting
+slit. The same holds at every real point other than zero. For
+$\mathrm{SLE}_4$, the absolute difference between the flowed real point
+and the driver, divided by two, is a Bessel process of dimension two,
+which does not hit zero. First apply this to rational starting points;
+real ODE order then gives the assertion for every other nonzero real
+point. Continuity of the ODE in its initial point and driver excludes
+prelimit hulls from small neighborhoods of all these points. For
+nearby points in $\mathbb H$, the imaginary-part equation keeps the
+solution in $\mathbb H$ through time $t$. Moreover, a hull at time $t$
+has height at most $2\sqrt t$, and its real projection is bounded by
+the driver range. Thus every subsequential limit of prefixes is
+contained in the limiting slit.
+
+Conversely, suppose a ball about an interior point of that slit were
+missed by prefixes along a subsequence. Their time-$t$ conformal maps
+would be holomorphic on the ball with values in $\mathbb H$.
+After mapping the range to the disk, normal-family compactness and
+ODE convergence off the slit give an extension of the limiting map
+across the ball with values in $\mathbb H$. Its conformal inverse
+would then send an interior half-plane point to the slit: approach
+the slit point through the ball off the slit and use continuity of
+the inverse. This is impossible. The starting point is already common
+to all slits. Uniform convergence of $\Phi_n$ proves
+\eqref{h:finite-prefixes} in physical coordinates. The reverse proof
+is identical.
+
+To obtain lattice stopping rules, round time $t$ up to the first
+completed exploration step of capacity at least $2t$, and denote the
+rule by $T_n(t)$ and its capacity time by $t'_n$. Its prefix and closed
+future differ from $K_{n,t}$ and $F_{n,t}$ by at most $C/n$ in Hausdorff
+distance. Also
+\begin{equation}\label{h:rounded-capacity}
+ t'_n\longrightarrow t\quad\hbox{almost surely}.
+\end{equation}
+Otherwise choose a rational $u>t$ below an overshoot occurring
+infinitely often. Along those indices $K_{n,u}$ is still within one
+step of $K_{n,t}$, contradicting \eqref{h:finite-prefixes}, since the
+simple capacity-parametrized limit strictly extends between $t$ and
+$u$. These rules are stopping times for the sign-prefix filtration.
+
+By \textup{(GB4)}, no point of $\mathcal Z$ lies on either limiting
+trace almost surely. Indeed a hit occurs in a finite prefix and,
+by \eqref{h:finite-prefixes}, forces the discrete complete strand
+arbitrarily close to the observer. Fatou's lemma and \textup{(GB4)}
+exclude this event. All subsequent assertions can therefore be made
+simultaneously for $z\in\mathcal Z$ and rational times.
+
+\paragraph{The terminal side identifies the common limiting arc.}
+For the forward limiting driver $U$, define
+\[
+ H_t(z)=e\left(l-\frac{2l}{\pi}
+       \arg\bigl(g_t(\Phi^{-1}(z))-U_t\bigr)\right),
+\]
+where $e=1$ or $-1$ according to which original arc maps to the
+positive real half-line. This is the harmonic observable determined
+by the forward driver, with the original and new side values matched.
+Equations \eqref{h:finite-prefixes}--\eqref{h:rounded-capacity} and ODE
+continuity give
+\begin{equation}\label{h:rounded-observable}
+ H^l_{n,T_n(t)}(z)\longrightarrow H_t(z).
+\end{equation}
+Assign arbitrary values of absolute value at most $l$ before $z$ is
+in the evaluation domain; eventually it has positive clearance from
+the rounded prefix. The same statement holds in reverse.
+
+We claim that the limiting terminal side satisfies
+\begin{equation}\label{h:terminal-side}
+ \E[lS(z)\mid U|_{[0,t]}]=H_t(z).
+\end{equation}
+Fix a small $r>0$ with $B(z,6r)\Subset D$, and take a radial smooth
+averaging test $f$ of total mass one supported in $B(z,r)$.
+Let $R_n$ explore to completion unless it first reaches
+$\overline B(z,4r)$, when it stops, and put $P_n=T_n(t)\wedge R_n$.
+Both rules protect $B(z,3r)$ for large $n$. If $\Psi$ is a bounded
+continuous function of a driver on $[0,t]$, with $|\Psi|\le1$, use
+at $P_n$ the multiplier $\Psi_n^*$ equal to
+$\Psi(U_n|_{[0,t]})$ when capacity time $t$ has been reached, and zero
+otherwise. This multiplier is $\mathcal F^n_{P_n}$-measurable. The
+exact conditional means obey
+\[
+ \E[M^n_{R_n}(f)\Psi_n^*]=\E[M^n_{P_n}(f)\Psi_n^*].
+\]
+Proposition~\ref{h:stopped} replaces both conditional means by their
+harmonic averages with $o_n(1)$ error, with $r$ fixed. The mean-value
+property makes these averages the values at $z$. If the complete
+strand avoids $\overline B(z,4r)$, the value at $R_n$ is exactly
+$lS_n(z)$: the completed component has only the corresponding matched
+boundary value. The other value is $H^l_{n,T_n(t)}(z)$ and the multiplier
+is $\Psi(U_n|_{[0,t]})$. All harmonic values are bounded by $l$.
+Consequently
+\[
+ \left|\E\left[(lS_n(z)-H^l_{n,T_n(t)}(z))
+              \Psi(U_n|_{[0,t]})\right]\right|
+ \le o_n(1)+4l\Prob\{\dist(z,\gamma_n)\le4r\}.
+\]
+Take the coupled limit, then $r\downarrow0$, and use \textup{(GB4)}.
+Bounded continuous tests determine the conditional expectation, proving
+\eqref{h:terminal-side}. Its reverse counterpart uses the same $S(z)$.
+The argument applies the stopped estimate with fixed protection; it
+never needs an estimate uniform as the test radius tends to zero.
+
+For a simple limiting crosscut and $z$ off it, $H_t(z)$ tends to $+l$
+or $-l$ according to the terminal side of $z$. To see this using
+harmonic measure, the tail of the crosscut eventually lies in any
+prescribed neighborhood of the target. Brownian motion from $z$
+exits the completed side with its constant label unless it first
+reaches that neighborhood. The probability of the latter event tends
+to zero, since a single boundary point has zero planar Brownian hitting
+probability. Along the slit the two accesses are kept distinct;
+Jordan crosscuts give precisely the two prime-end sides used by the
+harmonic observable.
+
+Bounded martingale convergence in \eqref{h:terminal-side}, along integer
+$t\to\infty$, now identifies $\E[lS(z)\mid U]$ with that terminal
+value. A variable taking only the values $\pm l$ whose conditional
+expectation is one of these two extremes equals that extreme almost
+surely. Thus $S(z)$ is the side label of $c$, and also of $\widehat c$.
+A Jordan crosscut is determined by its side labels on a dense set:
+they determine the relative closures in $D$ of its two open sides,
+whose intersection is the interior crosscut. Hence $c$ and
+$\widehat c$ have the same image, traversed in opposite directions.
+
+\paragraph{Harmonic-mass nonreturn excludes overlapping futures.}
+For every positive rational $t$, we next show that almost surely
+\begin{equation}\label{h:no-overlap}
+ F_t\cap K_t\text{ contains no nondegenerate subarc of }K_t.
+\end{equation}
+Fix one $z\in\mathcal Z$, choose observer vertices $v_n\to z$, and let
+$\nu_n$ be their independent-walk landing law at the rounded prefix
+$T_n(t)$, conditional on the strand. Equations
+\eqref{h:finite-prefixes}--\eqref{h:rounded-capacity} and
+Lemma~\ref{h:slit-sampling} imply, almost surely,
+\begin{equation}\label{h:landing-limit}
+ \nu_n\Longrightarrow\nu,
+ \qquad\nu=\text{Brownian exit law from }D\setminus K_t\text{ at }z.
+\end{equation}
+For clarity, the remaining Brownian domain-continuity step uses only
+landing locations. Couple Brownian motions from the converging observers
+by translation. Until the limiting motion approaches within $q$ of the
+limiting boundary, the varying-domain paths remain inside for large
+$n$. At that time their boundary distances are at most $2q$.
+Beurling's estimate bounds the chance of either remaining path moving
+distance $R$ before exit by $C(q/R)^\alpha$. The boundaries are connected
+and have diameter bounded below, so the bound is uniform for small
+$R$. Let $q/R\to0$ and then $R\to0$. This proves convergence of exit
+locations and, with the slit-sampling lemma, \eqref{h:landing-limit}.
+
+Write $F'_n$ for the closed future after $T_n(t)$, including its
+current point, so that $F'_n\to F_t$. For an open set $B\Subset D$
+and fixed $s>0$, weak convergence and Hausdorff convergence give
+\[
+ \liminf_n\nu_n\{x\in B:\dist(x,F'_n)<s\}
+ \ge\nu\{x\in B:\dist(x,F_t)<s/2\}
+ \ge\nu(B\cap K_t\cap F_t).
+\]
+For large $n$ these landings are off the original boundary. Including
+the current point does not change distance to the future before
+completion; completion has probability tending to zero by
+\eqref{h:rounded-capacity}. Proposition~\ref{g:nonreturn}, equivalently
+\eqref{h:nr} after harmonic sampling, makes the expectations of the
+left-hand probabilities tend to zero as $s\downarrow0$, uniformly
+in the stopping rule. Fatou's lemma and a countable exhaustion by
+$B\Subset D$ give
+\[
+ \nu(D\cap K_t\cap F_t)=0\quad\hbox{almost surely}.
+\]
+Every nondegenerate subarc of the simple slit has positive harmonic
+measure from $z$: a smaller subarc away from its endpoints contains
+a nonempty open arc on either prime-end side, and harmonic measure
+has full support on the prime-end circle. This proves
+\eqref{h:no-overlap}.
+
+\paragraph{From the common arc to ordered uniform convergence.}
+Work pathwise with the preceding simultaneous conclusions. Choose
+positive rational $t,p$ so large that $K_t$ and $L_p$ overlap in a
+nondegenerate subarc of their common limiting arc. If, infinitely
+often, the forward prefix to $t$ ended no later in strand order than
+the beginning of the reverse prefix to $p$, then
+$L_{n,p}\subset F_{n,t}$ on those indices. Passing to the limit would
+give $L_p\subset F_t$, contradicting \eqref{h:no-overlap}. Thus the
+two prefixes eventually cover the entire discrete strand. By
+\eqref{h:finite-prefixes}, the complete images converge in Hausdorff
+distance to the common limiting arc.
+
+For every rational $t>0$, $F_t$ is consequently a connected compact
+subset of that arc, and $K_t\cup F_t$ covers it. Hence $F_t$ contains
+$c([t,\infty])$. If it extended any earlier in the arc's order,
+connectedness would force a nondegenerate overlap with $K_t$, again
+contrary to \eqref{h:no-overlap}. Therefore
+\begin{equation}\label{h:limiting-futures}
+ F_t=c([t,\infty]).
+\end{equation}
+These prefix and future identifications give uniform convergence of
+$c_n$ to $c$ on compactified time $[0,\infty]$. Indeed, for any
+$u_n\to u\in(0,\infty)$, every limit point of $c_n(u_n)$ belongs to
+$K_t$ for every rational $t>u$ and to $F_t$ for every rational
+$0<t<u$. Their intersection is $\{c(u)\}$. At $0$ and $\infty$ the
+one-sided constraint suffices. Compactness and continuity upgrade
+this sequential assertion to uniform convergence.
+
+Every subsequence thus has a further coupled subsequence converging
+in the required curve metric to chordal $\mathrm{SLE}_4$. Finally the
+affine zero chord and the dual sign strand visit the same ordered
+faces and differ, after increasing reparametrization, by at most
+$C/n$. This transfers the conclusion to the interface of
+Theorem~\ref{thm:main}.
 \end{proof}
 
 \subsection{The variance normalization}
@@ -883,25 +1386,60 @@ second moments. Then every subsequential height gap satisfies
 \]
 \end{proposition}
 \begin{proof}
-Use the experiment with original heights $\pm l$, whose interface limit
-is $\mathrm{SLE}_4$ by the preceding propositions. Stop before compact
-smooth tests approach the curve. The conditional means are the
-corresponding harmonic observables, while their conditional covariance
-is $\sigma^2$ times the Dirichlet Green kernel of the remaining domain.
-The sequential uniformity of Theorem~\ref{t:covariance} is used to
-apply it to the actual random stopped strings. The moments from
-Proposition~\ref{f:averages} justify convergence of the averaged
-conditional variances.
+Use the matched experiment with original heights $\pm l$ and the coupled
+finite-prefix convergence \eqref{h:finite-prefixes}. Fix a nonzero
+nonnegative smooth test $f$ supported in an interior ball. Choose a
+positive rational $t$ such that a fixed neighborhood of this ball is
+deterministically protected through capacity time $t$. This is possible:
+its preimages under $\Phi_n$ have imaginary part bounded below, and a
+hull of capacity $2t$ has height at most $2\sqrt t$. Leave a fixed
+clearance so that the one-edge physical overshoot in $T_n(t)$ also
+preserves protection.
 
-In the half-plane set $Z_t(z)=g_t(z)-2B_t$. It\^o's formula yields
+Conditioning on $\mathcal F^n_{T_n(t)}$ gives exactly the sign-string
+kernel of the realized oriented prefix. Whether the rule stopped there
+is already decided by that prefix; no unobserved height values are
+frozen. The absorbing vertices along crossed primal edges connect to
+each other and to the exterior. The observed set, including the exterior
+in a fixed ambient box, therefore has a connected component of uniformly
+positive macroscopic diameter and satisfies the common thickness
+condition in Theorem~\ref{t:covariance}. It converges in Hausdorff distance
+to the exterior with $K_t$ adjoined. That theorem and
+Corollary~\ref{t:random-covariance} consequently give
+\begin{equation}\label{h:stopped-variance}
+ \E\operatorname{Var}(X_n(f)\mid\mathcal F^n_{T_n(t)})
+ \longrightarrow\sigma^2\E\langle f,G_{D\setminus K_t}f\rangle.
+\end{equation}
+Here brackets denote Euclidean area pairing. The Riemann-to-affine
+pairing error from Theorem~\ref{b:gff} tends deterministically to zero;
+the fixed-test moment bounds transfer both second moments and
+conditional-mean second moments between the two pairings.
+
+Proposition~\ref{h:stopped} approximates $M^n_{T_n(t)}(f)$ in $L^1$
+by the harmonic average. ODE continuity and the protected support
+identify its limit as $\int fH_t$. The exponential moments of
+Proposition~\ref{f:averages}, and conditional Jensen's inequality,
+make the squares of these conditional means uniformly integrable.
+Thus their variances converge to $\operatorname{Var}(\int fH_t)$.
+The unconditional field limit also has convergent second moments.
+The law of total variance and \eqref{h:stopped-variance} yield
+\begin{equation}\label{h:total-variance}
+ \operatorname{Var}\left(\int fH_t\right)
+ =\sigma^2\E\langle f,(G_D-G_{D\setminus K_t})f\rangle.
+\end{equation}
+
+For $0\le s\le t$ set
+$Z_s(z)=g_s(\Phi^{-1}(z))-2B_s$. The imaginary part of $Z_s$ on the
+test support is bounded below, since its square decreases by at most
+$4s$. It\^o's formula gives
 \[
- \dd\log Z_t(z)=-\frac{2}{Z_t(z)}\dd B_t.
+ \dd\log Z_s(z)=-\frac{2}{Z_s(z)}\dd B_s.
 \]
 The cross variation of the harmonic observables is therefore
 \begin{equation}\label{h:mean-bracket}
  \frac{16l^2}{\pi^2}
-       \operatorname{Im}\frac1{Z_t(z)}
-       \operatorname{Im}\frac1{Z_t(w)}\dd t.
+       \operatorname{Im}\frac1{Z_s(z)}
+       \operatorname{Im}\frac1{Z_s(w)}\dd s.
 \end{equation}
 For covariance $(-\Delta)^{-1}$ the half-plane Green function is
 \[
@@ -910,30 +1448,27 @@ For covariance $(-\Delta)^{-1}$ the half-plane Green function is
 \]
 Differentiating its conformal pullback gives
 \begin{equation}\label{h:green-loss}
- -\partial_tG_{D_t}(z,w)=\frac2\pi
-       \operatorname{Im}\frac1{Z_t(z)}
-       \operatorname{Im}\frac1{Z_t(w)}.
+ -\partial_sG_{D\setminus K_s}(z,w)=\frac2\pi
+       \operatorname{Im}\frac1{Z_s(z)}
+       \operatorname{Im}\frac1{Z_s(w)}.
 \end{equation}
-These normalizations and the observable-bracket/Green-loss comparison
-agree with \cite[preprint version, Lemmas 2.5--2.6,
-equations (2.3)--(2.4)]{SScontinuum}.
-Only this calculation is used; the stronger conditional coupling
-in that work is not an input.
+These normalizations agree with \cite[preprint version, Lemmas 2.5--2.6,
+equations (2.3)--(2.4)]{SScontinuum}. Only this calculation is used;
+the stronger conditional coupling in that work is not an input.
 
-Integrate both identities against a nonzero nonnegative smooth test
-$f$ twice. No pointwise value of the limiting field is used. The law
-of total variance equates the gained variance of the conditional-mean
-martingale with the expected loss of the residual Green variance.
-For a nonzero localized time interval this gives
+Integrate both identities against $f$ twice and over $0\le s\le t$.
+The integrands are bounded on the protected support, and the Green
+singularity is integrable for area pairing. No pointwise value of the
+limiting field is used. Equation~\eqref{h:total-variance} becomes
 \[
  \frac{16l^2}{\pi^2}\,
- \E\int\left(\int f(z)\operatorname{Im}(1/Z_t(z))\dd z\right)^2\dd t
+ \E\int_0^t\left(\int f(z)\operatorname{Im}(1/Z_s(z))\dd z\right)^2\dd s
  =
  \frac{2\sigma^2}{\pi}\,
- \E\int\left(\int f(z)\operatorname{Im}(1/Z_t(z))\dd z\right)^2\dd t.
+ \E\int_0^t\left(\int f(z)\operatorname{Im}(1/Z_s(z))\dd z\right)^2\dd s.
 \]
-The common factor is finite and strictly positive. Cancelling it
-proves the formula.
+The common factor is finite and strictly positive because $f\ge0$
+is nonzero and $Z_s(z)\in\mathbb H$. Cancelling it proves the formula.
 \end{proof}
 
 \begin{corollary}[Universality]\label{h:assembly}
