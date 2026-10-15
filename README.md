@@ -2,9 +2,9 @@
 
 This repository was created as a public square for collecting and sharing trustworthy commentary on [OpenAI's mathematics solution dump](https://github.com/openai/math), to help mathematicians avoid retreating to closed-door discussions or being misled by online rumor mills. The goal is to amass the collective impressions of mathematicians in their own areas of expertise.
 
-To start, open the list of [pull requests](https://github.com/mahrud/openai-math-comments/pulls) above. Each manuscript group has its own pull request for discussion. For instance, commentary about the quasi-Riemann hypothesis can be posted under [#3](https://github.com/mahrud/openai-math-comments/pull/3). You can search by group number or keywords.
+To start, open the list of [pull requests](https://github.com/mahrud/openai-math-comments/pulls) above. **You don't need to know what a "pull request" is, or anything else about git or GitHub for that matter**. For us, each "pull request" is simply a place to collect discussion comments about each manuscript group. For instance, commentary about the quasi-Riemann hypothesis can be posted under [#3](https://github.com/mahrud/openai-math-comments/pull/3). You can search by group number or keywords.
 
-Moreover, each manuscript addition or update has its own commit, and you can click on a commit and leave a comment somewhere specific in a tex file, e.g. you can click on the second commit, [3ac0106](https://github.com/mahrud/openai-math-comments/pull/3/commits/3ac0106096d5dcb7c1e5282f711c1e1086f93820).
+Moreover, each manuscript addition or update has its own "commit" (the atomic units of "revision" on GitHub), and you can click on a commit and leave a comment somewhere specific in a tex file, e.g. you can click on the second commit, [3ac0106](https://github.com/mahrud/openai-math-comments/pull/3/commits/3ac0106096d5dcb7c1e5282f711c1e1086f93820).
 
 You must log in to GitHub to leave a comment. You can leave a general comment directly on the pull request or comment on a particular line or section of the manuscript source. For pull requests with thousands of Lean files, the easiest way to comment on a single manuscript is to click on the commit that added or last updated the file.
 
